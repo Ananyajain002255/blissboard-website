@@ -1,3 +1,4 @@
+
 :root {
     --cream: #faf7f1;
     --white: #fffefa;
@@ -8,7 +9,7 @@
     --pink: #f4e6e0;
     --border: #e8e0d6;
     --green: #e7e9dc;
-    --shadow: 0 15px 45px rgba(49, 39, 30, 0.07);
+    --shadow: 0 15px 45px rgba(49,39,30,.07);
 }
 
 * {
@@ -27,7 +28,7 @@ body {
     color: var(--dark);
     font-family: "DM Sans", sans-serif;
     line-height: 1.7;
-    transition: background 0.3s, color 0.3s;
+    transition: background .3s, color .3s;
 }
 
 a {
@@ -35,10 +36,7 @@ a {
     text-decoration: none;
 }
 
-button,
-input,
-select,
-textarea {
+button, input, select, textarea {
     font: inherit;
 }
 
@@ -52,39 +50,35 @@ img {
     object-fit: cover;
 }
 
-em {
-    color: var(--accent);
-    font-family: "Playfair Display", serif;
-    font-weight: 500;
-}
-
 .section-padding {
     padding: 110px 8%;
 }
 
-.section-tag,
-.eyebrow {
+.section-tag, .eyebrow {
     color: var(--accent);
     font-size: 10px;
     font-weight: 700;
     letter-spacing: 2.5px;
 }
 
-h1,
-h2,
-h3 {
+h1, h2, h3 {
     line-height: 1.2;
 }
 
-h1,
-h2 {
+h1, h2 {
     font-family: "Playfair Display", serif;
     font-weight: 500;
 }
 
 h2 {
-    font-size: clamp(36px, 5vw, 58px);
+    font-size: clamp(36px,5vw,58px);
     margin-top: 16px;
+}
+
+em {
+    color: var(--accent);
+    font-family: "Playfair Display", serif;
+    font-weight: 500;
 }
 
 
@@ -96,12 +90,12 @@ h2 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: rgba(250, 247, 241, 0.95);
+    background: rgba(250,247,241,.96);
     backdrop-filter: blur(15px);
     position: sticky;
     top: 0;
     z-index: 200;
-    border-bottom: 1px solid rgba(232, 224, 214, 0.7);
+    border-bottom: 1px solid var(--border);
 }
 
 .logo {
@@ -121,7 +115,6 @@ h2 {
     border-radius: 50%;
     background: var(--dark);
     color: white;
-    font-family: "Playfair Display", serif;
     font-size: 20px;
 }
 
@@ -131,14 +124,14 @@ h2 {
 
 .nav-links {
     display: flex;
-    gap: 30px;
+    gap: 25px;
     align-items: center;
 }
 
 .nav-links a {
     font-size: 12px;
     color: var(--muted);
-    transition: color 0.2s;
+    transition: color .2s;
 }
 
 .nav-links a:hover {
@@ -157,17 +150,15 @@ h2 {
     padding: 12px 20px;
     border-radius: 30px;
     font-size: 11px;
-    transition: 0.3s;
+    transition: .3s;
 }
 
-.nav-cta:hover,
-.primary-btn:hover {
+.nav-cta:hover, .primary-btn:hover {
     background: var(--accent);
     transform: translateY(-2px);
 }
 
-.theme-toggle,
-.menu-toggle {
+.theme-toggle, .menu-toggle {
     border: 1px solid var(--border);
     background: transparent;
     color: var(--dark);
@@ -188,14 +179,14 @@ h2 {
     min-height: 680px;
     padding: 80px 8%;
     display: grid;
-    grid-template-columns: 1fr 0.95fr;
+    grid-template-columns: 1fr .95fr;
     gap: 65px;
     align-items: center;
     overflow: hidden;
 }
 
 .hero h1 {
-    font-size: clamp(48px, 6vw, 76px);
+    font-size: clamp(48px,6vw,76px);
     margin: 22px 0;
     letter-spacing: -2px;
 }
@@ -214,8 +205,7 @@ h2 {
     margin-top: 32px;
 }
 
-.primary-btn,
-.secondary-btn {
+.primary-btn, .secondary-btn {
     display: inline-flex;
     justify-content: center;
     align-items: center;
@@ -224,7 +214,7 @@ h2 {
     font-size: 11px;
     font-weight: 600;
     border: none;
-    transition: 0.3s;
+    transition: .3s;
 }
 
 .primary-btn {
@@ -265,7 +255,7 @@ h2 {
 
 .hero-image img {
     height: 100%;
-    transition: transform 0.6s;
+    transition: transform .6s;
 }
 
 .hero-image:hover img {
@@ -287,8 +277,7 @@ h2 {
     font-size: 25px;
 }
 
-.floating-card strong,
-.floating-card small {
+.floating-card strong, .floating-card small {
     display: block;
 }
 
@@ -362,7 +351,7 @@ h2 {
 }
 
 
-/* EXPERIENCE SECTION */
+/* EXPERIENCES */
 
 .experiences-section {
     background: var(--cream);
@@ -382,11 +371,10 @@ h2 {
     padding: 10px 20px;
     border-radius: 30px;
     font-size: 11px;
-    transition: 0.2s;
+    transition: .2s;
 }
 
-.filter:hover,
-.filter.active {
+.filter:hover, .filter.active {
     background: var(--dark);
     color: white;
     border-color: var(--dark);
@@ -399,8 +387,7 @@ h2 {
     margin-bottom: 35px;
 }
 
-.experience-tools input,
-.experience-tools select {
+.experience-tools input, .experience-tools select {
     padding: 13px 18px;
     border: 1px solid var(--border);
     border-radius: 30px;
@@ -415,8 +402,7 @@ h2 {
     min-width: 200px;
 }
 
-.experience-tools input:focus,
-.experience-tools select:focus {
+.experience-tools input:focus, .experience-tools select:focus {
     border-color: var(--accent);
 }
 
@@ -436,7 +422,7 @@ h2 {
 
 .experience-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4,1fr);
     gap: 22px;
 }
 
@@ -444,7 +430,7 @@ h2 {
     background: var(--white);
     border-radius: 13px;
     overflow: hidden;
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: transform .3s, box-shadow .3s;
 }
 
 .experience-card:hover {
@@ -465,11 +451,12 @@ h2 {
 
 .card-image img {
     height: 100%;
-    transition: transform 0.5s;
+    object-fit: cover;
+    transition: transform .5s;
 }
 
 .experience-card:hover .card-image img {
-    transform: scale(1.07);
+    transform: scale(1.05);
 }
 
 .card-number {
@@ -478,7 +465,7 @@ h2 {
     left: 12px;
     padding: 6px 10px;
     border-radius: 20px;
-    background: rgba(255, 254, 250, 0.9);
+    background: rgba(255,254,250,.9);
     font-size: 10px;
 }
 
@@ -562,7 +549,7 @@ h2 {
 
 .event-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3,1fr);
     gap: 25px;
 }
 
@@ -570,7 +557,7 @@ h2 {
     background: var(--cream);
     border-radius: 14px;
     overflow: hidden;
-    transition: 0.3s;
+    transition: .3s;
 }
 
 .event-card:hover {
@@ -579,12 +566,18 @@ h2 {
 }
 
 .event-image {
-    height: 260px;
+    height: 240px;
     position: relative;
+    overflow: hidden;
 }
 
 .event-image img {
     height: 100%;
+    transition: transform .4s;
+}
+
+.event-card:hover .event-image img {
+    transform: scale(1.05);
 }
 
 .event-label {
@@ -648,6 +641,186 @@ h2 {
 }
 
 
+/* CALENDAR */
+
+.calendar-section {
+    background: var(--cream);
+}
+
+.calendar-layout {
+    display: grid;
+    grid-template-columns: 1.25fr .75fr;
+    gap: 30px;
+    align-items: stretch;
+}
+
+.calendar-box, .calendar-details {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 30px;
+    box-shadow: var(--shadow);
+}
+
+.calendar-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 28px;
+}
+
+.calendar-top h3 {
+    font-family: "Playfair Display", serif;
+    font-size: 24px;
+}
+
+.calendar-top button {
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--dark);
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    font-size: 24px;
+}
+
+.calendar-top button:hover {
+    background: var(--dark);
+    color: white;
+}
+
+.calendar-weekdays, .calendar-days {
+    display: grid;
+    grid-template-columns: repeat(7,1fr);
+    gap: 7px;
+}
+
+.calendar-weekdays {
+    margin-bottom: 12px;
+}
+
+.calendar-weekdays span {
+    text-align: center;
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--muted);
+}
+
+.calendar-day {
+    min-height: 57px;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    background: transparent;
+    color: var(--dark);
+    position: relative;
+    font-size: 12px;
+    transition: .2s;
+}
+
+.calendar-day:hover {
+    background: var(--pink);
+}
+
+.calendar-day.empty {
+    pointer-events: none;
+}
+
+.calendar-day.today {
+    border-color: var(--accent);
+    font-weight: 700;
+}
+
+.calendar-day.selected {
+    background: var(--dark);
+    color: white;
+}
+
+.calendar-day.has-event::after {
+    content: "";
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+    bottom: 6px;
+    left: calc(50% - 3px);
+}
+
+.calendar-day.selected.has-event::after {
+    background: white;
+}
+
+.calendar-legend {
+    display: flex;
+    gap: 25px;
+    margin-top: 25px;
+    color: var(--muted);
+    font-size: 10px;
+}
+
+.legend-dot, .today-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+.legend-dot {
+    background: var(--accent);
+}
+
+.today-dot {
+    border: 1px solid var(--accent);
+}
+
+.calendar-details h3 {
+    font-family: "Playfair Display", serif;
+    font-size: 26px;
+    margin: 15px 0 22px;
+}
+
+.calendar-event-list {
+    min-height: 150px;
+}
+
+.calendar-event {
+    padding: 16px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    margin-bottom: 12px;
+}
+
+.calendar-event h4 {
+    font-family: "Playfair Display", serif;
+    font-size: 17px;
+    margin-bottom: 5px;
+}
+
+.calendar-event p {
+    color: var(--muted);
+    font-size: 11px;
+}
+
+.calendar-event a {
+    display: inline-block;
+    margin-top: 12px;
+    color: var(--accent);
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.empty-calendar {
+    color: var(--muted);
+    font-size: 12px;
+    padding: 20px 0;
+}
+
+.calendar-contact {
+    margin-top: 15px;
+}
+
+
 /* FIND YOUR THING */
 
 .find-section {
@@ -656,16 +829,16 @@ h2 {
 
 .category-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4,1fr);
     gap: 18px;
     margin-top: 45px;
 }
 
 .category-card {
-    background: rgba(255, 255, 255, 0.6);
+    background: rgba(255,255,255,.6);
     padding: 30px 23px;
     border-radius: 12px;
-    transition: 0.3s;
+    transition: .3s;
 }
 
 .category-card:hover {
@@ -705,7 +878,7 @@ h2 {
 
 .quote-section p {
     font-family: "Playfair Display", serif;
-    font-size: clamp(32px, 5vw, 55px);
+    font-size: clamp(32px,5vw,55px);
     line-height: 1.3;
     margin: 18px 0;
 }
@@ -738,7 +911,7 @@ h2 {
 
 .plan-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4,1fr);
     gap: 15px;
 }
 
@@ -783,7 +956,7 @@ h2 {
     background: var(--white);
     border-radius: 18px;
     display: grid;
-    grid-template-columns: 0.8fr 1.2fr;
+    grid-template-columns: .8fr 1.2fr;
     gap: 60px;
     box-shadow: var(--shadow);
 }
@@ -806,9 +979,7 @@ h2 {
     margin: 13px 0 6px;
 }
 
-#enquiryForm input,
-#enquiryForm select,
-#enquiryForm textarea {
+#enquiryForm input, #enquiryForm select, #enquiryForm textarea {
     width: 100%;
     padding: 13px 15px;
     background: var(--cream);
@@ -819,8 +990,7 @@ h2 {
     font-size: 11px;
 }
 
-#enquiryForm input:focus,
-#enquiryForm select:focus,
+#enquiryForm input:focus, #enquiryForm select:focus,
 #enquiryForm textarea:focus {
     border-color: var(--accent);
 }
@@ -863,7 +1033,7 @@ h2 {
     align-items: center;
     justify-content: center;
     padding: 20px;
-    background: rgba(25, 22, 20, 0.65);
+    background: rgba(25,22,20,.65);
 }
 
 .modal.show {
@@ -877,19 +1047,12 @@ h2 {
     padding: 50px;
     border-radius: 16px;
     background: var(--white);
-    animation: modalIn 0.25s ease;
+    animation: modalIn .25s ease;
 }
 
 @keyframes modalIn {
-    from {
-        opacity: 0;
-        transform: translateY(15px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 .modal-content h2 {
@@ -962,11 +1125,10 @@ h2 {
     color: #c6bfb3;
     font-size: 11px;
     margin-bottom: 12px;
-    transition: color 0.2s;
+    transition: color .2s;
 }
 
-.footer-column a:hover,
-.footer-brand > a:hover {
+.footer-column a:hover, .footer-brand > a:hover {
     color: #e8a88e;
 }
 
@@ -1026,13 +1188,12 @@ body.dark-mode {
     --border: #49444c;
     --accent-light: #503b3d;
     --green: #292830;
-
     background: var(--cream);
     color: var(--dark);
 }
 
 body.dark-mode .navbar {
-    background: rgba(35, 33, 39, 0.96);
+    background: rgba(35,33,39,.96);
     border-color: var(--border);
 }
 
@@ -1055,10 +1216,6 @@ body.dark-mode .category-card:hover {
 
 body.dark-mode .floating-card {
     background: #34313a;
-}
-
-body.dark-mode .floating-card small {
-    color: #c0b9c3;
 }
 
 body.dark-mode .logo-icon {
@@ -1098,9 +1255,20 @@ body.dark-mode .menu-toggle {
 body.dark-mode .experience-card,
 body.dark-mode .event-card,
 body.dark-mode .plan-card,
-body.dark-mode .contact-panel {
+body.dark-mode .contact-panel,
+body.dark-mode .calendar-box,
+body.dark-mode .calendar-details {
     background: #29272d;
     border-color: var(--border);
+}
+
+body.dark-mode .calendar-day {
+    color: white;
+}
+
+body.dark-mode .calendar-day.selected {
+    background: #e3a087;
+    color: #28251f;
 }
 
 body.dark-mode .modal-content {
@@ -1112,28 +1280,27 @@ body.dark-mode .modal-close {
 }
 
 
-/* RESPONSIVE DESIGN */
+/* RESPONSIVE */
 
 @media (max-width: 1100px) {
-
     .experience-grid {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(3,1fr);
     }
 
-    .category-grid,
-    .plan-grid {
-        grid-template-columns: repeat(2, 1fr);
+    .category-grid, .plan-grid {
+        grid-template-columns: repeat(2,1fr);
     }
 
     .hero {
         gap: 35px;
     }
 
+    .event-grid {
+        grid-template-columns: repeat(2,1fr);
+    }
 }
 
-
 @media (max-width: 800px) {
-
     .navbar {
         padding: 0 5%;
     }
@@ -1194,11 +1361,12 @@ body.dark-mode .modal-close {
         padding: 35px;
     }
 
+    .calendar-layout {
+        grid-template-columns: 1fr;
+    }
 }
 
-
 @media (max-width: 600px) {
-
     .logo {
         font-size: 20px;
     }
@@ -1241,8 +1409,7 @@ body.dark-mode .modal-close {
         height: 220px;
     }
 
-    .category-grid,
-    .plan-grid {
+    .category-grid, .plan-grid {
         grid-template-columns: 1fr;
     }
 
@@ -1273,6 +1440,19 @@ body.dark-mode .modal-close {
         padding: 40px 25px;
     }
 
+    .calendar-box, .calendar-details {
+        padding: 18px;
+    }
+
+    .calendar-days, .calendar-weekdays {
+        gap: 3px;
+    }
+
+    .calendar-day {
+        min-height: 44px;
+        font-size: 11px;
+    }
+
     .footer-main {
         grid-template-columns: 1fr 1fr;
         gap: 35px 20px;
@@ -1286,5 +1466,4 @@ body.dark-mode .modal-close {
         flex-direction: column;
         gap: 10px;
     }
-
 }
