@@ -3,14 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>BlissBoard | Make Room for Joy</title>
-
-    <meta name="description" content="Discover creative workshops, art experiences and beautiful gatherings with BlissBoard.">
+    <meta name="description" content="BlissBoard creates fun creative experiences, art workshops, social meetups and memorable events across Delhi NCR.">
+    <title>BlissBoard | Create • Connect • Experience</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
@@ -18,450 +15,593 @@
 
 <body>
 
+    <div class="scroll-progress" id="scrollProgress"></div>
+
     <!-- NAVBAR -->
-
     <header class="navbar">
-
         <a href="#home" class="logo">
-            <span class="logo-icon">b.</span>
-            blissboard<span>.</span>
+            <span class="logo-icon">B</span>
+            <span>blissboard<span class="logo-dot">.</span></span>
         </a>
 
-        <button class="menu-toggle" id="menuToggle">☰</button>
-
-        <nav id="nav">
+        <nav class="nav-links" id="navLinks">
             <a href="#home">Home</a>
             <a href="#experiences">Experiences</a>
-            <a href="#about">About Us</a>
-            <a href="#how">How It Works</a>
-            <a href="#contact" class="nav-button">Let's Connect ↗</a>
+            <a href="#events">Events</a>
+            <a href="#about">About</a>
+            <a href="#plan">Plan an Event</a>
         </nav>
 
+        <div class="nav-actions">
+            <button class="theme-toggle" id="themeToggle" aria-label="Change theme">🌙</button>
+            <a href="#plan" class="nav-cta">Let's Connect ↗</a>
+            <button class="menu-toggle" id="menuToggle" aria-label="Open menu">☰</button>
+        </div>
     </header>
 
 
-    <!-- HERO SECTION -->
+    <main>
 
-    <section class="hero" id="home">
+        <!-- HERO -->
+        <section class="hero" id="home">
+            <div class="hero-content">
+                <span class="eyebrow">CREATE • CONNECT • EXPERIENCE</span>
 
-        <div class="hero-content">
+                <h1>Make your weekend<br>
+                    a little more <em>creative.</em>
+                </h1>
 
-            <p class="eyebrow">✳ A LITTLE SPACE TO FEEL GOOD</p>
+                <p class="hero-description">
+                    Discover hands-on creative experiences, meet new people,
+                    celebrate special moments, and make something you'll
+                    actually want to take home.
+                </p>
 
-            <h1>
-                Less routine.<br>
-                <em>More moments.</em>
-            </h1>
+                <div class="hero-buttons">
+                    <a href="#experiences" class="primary-btn">Explore Experiences ↗</a>
+                    <a href="#plan" class="secondary-btn">Plan an Event</a>
+                </div>
 
-            <p class="hero-description">
-                A soft escape in a loud world.
-                Come as you are, get creative,
-                meet lovely people and leave with a story.
+                <div class="hero-note">
+                    <span>✦ Create something</span>
+                    <span>♡ Make memories</span>
+                </div>
+            </div>
+
+            <div class="hero-visual">
+                <div class="hero-image">
+                    <img
+                        src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=1100&q=85"
+                        alt="Creative art and painting workshop">
+                </div>
+
+                <div class="floating-card floating-one">
+                    <span>🎨</span>
+                    <div>
+                        <strong>Make something</strong>
+                        <small>With your own hands</small>
+                    </div>
+                </div>
+
+                <div class="floating-card floating-two">
+                    <span>♡</span>
+                    <div>
+                        <strong>Meet your people</strong>
+                        <small>Collect little moments</small>
+                    </div>
+                </div>
+
+                <div class="hero-circle">A little<br>more joy ✦</div>
+            </div>
+        </section>
+
+
+        <!-- ABOUT INTRO -->
+        <section class="intro-section section-padding" id="about">
+            <div class="section-tag">WELCOME TO BLISSBOARD</div>
+
+            <h2>There's more to a weekend<br>than <em>scrolling.</em></h2>
+
+            <p class="intro-text">
+                BlissBoard brings people together through creative experiences,
+                activities and events — from painting and pottery to birthdays,
+                celebrations, college gatherings, corporate events and everything
+                in between.
+            </p>
+        </section>
+
+
+        <!-- EXPERIENCES -->
+        <section class="experiences-section section-padding" id="experiences">
+
+            <div class="section-heading">
+                <div>
+                    <div class="section-tag">OUR EXPERIENCES</div>
+                    <h2>Pick something.<br><em>Make it yours.</em></h2>
+                </div>
+
+                <p>
+                    From hands-on art to completely unexpected creative
+                    experiences, there's always something new to try.
+                </p>
+            </div>
+
+
+            <div class="filter-bar">
+                <button class="filter active" data-filter="all">All</button>
+                <button class="filter" data-filter="painting">Painting</button>
+                <button class="filter" data-filter="craft">DIY & Craft</button>
+                <button class="filter" data-filter="art">Creative Art</button>
+                <button class="filter" data-filter="pottery">Pottery</button>
+            </div>
+
+
+            <div class="experience-tools">
+
+                <input
+                    type="search"
+                    id="experienceSearch"
+                    placeholder="⌕  Search experiences..."
+                    aria-label="Search experiences">
+
+                <select id="sortExperiences" aria-label="Sort experiences">
+                    <option value="default">Sort: Default</option>
+                    <option value="az">Name: A to Z</option>
+                    <option value="za">Name: Z to A</option>
+                </select>
+
+                <button id="showSaved" class="saved-button">
+                    ♡ Saved (<span id="savedCount">0</span>)
+                </button>
+
+            </div>
+
+
+            <div class="experience-grid" id="experienceGrid">
+
+                <article class="experience-card" data-category="painting">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1547891654-e66ed7ebb968?auto=format&fit=crop&w=800&q=85" alt="Tote bag painting">
+                        <span class="card-number">01</span>
+                    </div>
+                    <div class="card-content">
+                        <span class="card-category">PAINT • CREATE • PERSONALISE</span>
+                        <h3>Tote Bag Painting</h3>
+                        <p>Turn a simple tote bag into a personalised piece of art that reflects your style.</p>
+                        <button class="details-button" data-title="Tote Bag Painting">Explore Experience ↗</button>
+                    </div>
+                </article>
+
+
+                <article class="experience-card" data-category="art">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?auto=format&fit=crop&w=800&q=85" alt="Japanese Kintsugi art">
+                        <span class="card-number">02</span>
+                    </div>
+                    <div class="card-content">
+                        <span class="card-category">JAPANESE ART • IMPERFECTION • GOLD</span>
+                        <h3>Japanese Kintsugi</h3>
+                        <p>Explore the Japanese art of celebrating imperfections and creating beauty from broken pieces.</p>
+                        <button class="details-button" data-title="Japanese Kintsugi">Explore Experience ↗</button>
+                    </div>
+                </article>
+
+
+                <article class="experience-card" data-category="craft">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1490312278390-ab64016e0aa9?auto=format&fit=crop&w=800&q=85" alt="Resin craft">
+                        <span class="card-number">03</span>
+                    </div>
+                    <div class="card-content">
+                        <span class="card-category">RESIN • MINIATURE • NATURE</span>
+                        <h3>Resin Koi Pond</h3>
+                        <p>Create a beautiful miniature pond-inspired artwork using resin and creative details.</p>
+                        <button class="details-button" data-title="Resin Koi Pond">Explore Experience ↗</button>
+                    </div>
+                </article>
+
+
+                <article class="experience-card" data-category="craft">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=800&q=85" alt="Moon lamp decor">
+                        <span class="card-number">04</span>
+                    </div>
+                    <div class="card-content">
+                        <span class="card-category">DIY • LIGHT • DECOR</span>
+                        <h3>Moon Lamp</h3>
+                        <p>Make your own dreamy moon-inspired lamp and add a little magic to your space.</p>
+                        <button class="details-button" data-title="Moon Lamp">Explore Experience ↗</button>
+                    </div>
+                </article>
+
+
+                <article class="experience-card" data-category="craft">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?auto=format&fit=crop&w=800&q=85" alt="Miniature food plate craft">
+                        <span class="card-number">05</span>
+                    </div>
+                    <div class="card-content">
+                        <span class="card-category">MINIATURE • FOOD • CRAFT</span>
+                        <h3>Miniature Food Plate</h3>
+                        <p>Play with tiny details and create adorable miniature food-inspired pieces.</p>
+                        <button class="details-button" data-title="Miniature Food Plate">Explore Experience ↗</button>
+                    </div>
+                </article>
+
+
+                <article class="experience-card" data-category="art">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1541961017774-22349e4a1262?auto=format&fit=crop&w=800&q=85" alt="Texture art">
+                        <span class="card-number">06</span>
+                    </div>
+                    <div class="card-content">
+                        <span class="card-category">TEXTURE • ART • EXPRESSION</span>
+                        <h3>Texture Art</h3>
+                        <p>Experiment with textures, shapes and layers to create your own statement artwork.</p>
+                        <button class="details-button" data-title="Texture Art">Explore Experience ↗</button>
+                    </div>
+                </article>
+
+
+                <article class="experience-card" data-category="painting">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=800&q=85" alt="Tumbler painting">
+                        <span class="card-number">07</span>
+                    </div>
+                    <div class="card-content">
+                        <span class="card-category">PAINT • SIP • PERSONALISE</span>
+                        <h3>Tumbler Painting</h3>
+                        <p>Give your everyday tumbler a creative makeover with colours and personalised designs.</p>
+                        <button class="details-button" data-title="Tumbler Painting">Explore Experience ↗</button>
+                    </div>
+                </article>
+
+
+                <article class="experience-card" data-category="pottery">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1565193298595-6e8c7d5c6f8c?auto=format&fit=crop&w=800&q=85" alt="Hand build pottery">
+                        <span class="card-number">08</span>
+                    </div>
+                    <div class="card-content">
+                        <span class="card-category">CLAY • HANDS-ON • CREATE</span>
+                        <h3>Hand-Build Pottery</h3>
+                        <p>Shape clay by hand and create something unique, personal and completely yours.</p>
+                        <button class="details-button" data-title="Hand-Build Pottery">Explore Experience ↗</button>
+                    </div>
+                </article>
+
+
+                <article class="experience-card" data-category="painting">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=800&q=85" alt="Coaster painting">
+                        <span class="card-number">09</span>
+                    </div>
+                    <div class="card-content">
+                        <span class="card-category">PAINT • DESIGN • DECOR</span>
+                        <h3>Coaster Painting</h3>
+                        <p>Transform plain coasters into colourful handmade pieces for your home or as gifts.</p>
+                        <button class="details-button" data-title="Coaster Painting">Explore Experience ↗</button>
+                    </div>
+                </article>
+
+
+                <article class="experience-card" data-category="art">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1541961017774-22349e4a1262?auto=format&fit=crop&w=800&q=85" alt="Vision board workshop">
+                        <span class="card-number">10</span>
+                    </div>
+                    <div class="card-content">
+                        <span class="card-category">DREAM • PLAN • CREATE</span>
+                        <h3>Vision Board</h3>
+                        <p>Bring your goals to life with inspiring pictures, words, quotes and creative elements.</p>
+                        <button class="details-button" data-title="Vision Board">Explore Experience ↗</button>
+                    </div>
+                </article>
+
+            </div>
+
+            <p class="no-results" id="noResults">No experiences found. Try another search.</p>
+
+            <p class="section-bottom-note">And we're just getting started. ✦</p>
+
+        </section>
+
+
+        <!-- EVENTS -->
+        <section class="events-section section-padding" id="events">
+
+            <div class="section-heading">
+                <div>
+                    <div class="section-tag">WHAT'S HAPPENING</div>
+                    <h2>Upcoming <em>experiences.</em></h2>
+                </div>
+
+                <p>
+                    Find your next creative break, meet new people
+                    and make memories along the way.
+                </p>
+            </div>
+
+
+            <div class="event-grid">
+
+                <article class="event-card">
+                    <div class="event-image">
+                        <img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=900&q=85" alt="Coaster painting event">
+                        <span class="event-label">CREATIVE WORKSHOP</span>
+                    </div>
+
+                    <div class="event-content">
+                        <div class="event-date">SAT <strong>07</strong> NOV 2026</div>
+                        <h3>Coaster Painting</h3>
+                        <p>Make your own colourful coaster designs in a relaxed creative session.</p>
+                        <div class="event-meta">
+                            <span>📍 Delhi</span>
+                            <span>🎨 Painting</span>
+                        </div>
+                        <button class="event-button" data-event="Coaster Painting">Enquire About Event ↗</button>
+                    </div>
+                </article>
+
+
+                <article class="event-card">
+                    <div class="event-image">
+                        <img src="https://images.unsplash.com/photo-1541961017774-22349e4a1262?auto=format&fit=crop&w=900&q=85" alt="Vision board event">
+                        <span class="event-label">CREATIVE WORKSHOP</span>
+                    </div>
+
+                    <div class="event-content">
+                        <div class="event-date">SAT <strong>14</strong> NOV 2026</div>
+                        <h3>Vision Board</h3>
+                        <p>Turn your dreams and goals into a personalised visual masterpiece.</p>
+                        <div class="event-meta">
+                            <span>📍 Noida</span>
+                            <span>✨ Creative Art</span>
+                        </div>
+                        <button class="event-button" data-event="Vision Board">Enquire About Event ↗</button>
+                    </div>
+                </article>
+
+            </div>
+
+            <p class="event-disclaimer">
+                Event dates and availability may change. Please confirm the latest
+                details, venue and charges with BlissBoard before making plans.
             </p>
 
-            <div class="hero-buttons">
+        </section>
 
-                <a href="#experiences" class="primary-btn">
-                    Explore Experiences ↗
-                </a>
 
-                <a href="#about" class="secondary-btn">
-                    Discover Our Story ↓
-                </a>
+        <!-- CATEGORIES -->
+        <section class="find-section section-padding">
+            <div class="section-tag">FIND YOUR THING</div>
+            <h2>However you want<br>to <em>experience it.</em></h2>
+
+            <div class="category-grid">
+
+                <div class="category-card">
+                    <span>🎨</span>
+                    <h3>Creative Workshops</h3>
+                    <p>Hands-on activities where you actually make something.</p>
+                </div>
+
+                <div class="category-card">
+                    <span>🎂</span>
+                    <h3>Celebrations</h3>
+                    <p>Birthdays, special occasions and memorable gatherings.</p>
+                </div>
+
+                <div class="category-card">
+                    <span>🎓</span>
+                    <h3>College & Communities</h3>
+                    <p>Bring people together around something fun.</p>
+                </div>
+
+                <div class="category-card">
+                    <span>✨</span>
+                    <h3>Custom Events</h3>
+                    <p>Have an idea? We'll help turn it into an experience.</p>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- QUOTE -->
+        <section class="quote-section">
+            <span class="quote-star">✳</span>
+            <p>Come for the activity.<br>Stay for the <em>memories.</em></p>
+            <span class="quote-small">THAT'S THE BLISSBOARD FEELING</span>
+        </section>
+
+
+        <!-- PLAN EVENT -->
+        <section class="plan-section section-padding" id="plan">
+
+            <div class="plan-intro">
+                <div class="section-tag">PLAN WITH BLISSBOARD</div>
+                <h2>You bring the occasion.<br><em>We create the experience.</em></h2>
+
+                <p>
+                    Whether you're celebrating a birthday, planning a college event,
+                    organising a corporate gathering, hosting a private celebration,
+                    or simply looking for something different — BlissBoard can help
+                    bring it to life.
+                </p>
+            </div>
+
+
+            <div class="plan-grid">
+
+                <div class="plan-card">
+                    <span>01</span>
+                    <h3>Come to our venue</h3>
+                    <p>Choose from venues across Delhi NCR and enjoy a creative experience organised by BlissBoard.</p>
+                    <small>Birthdays · Dates · Friends · Families · Workshops</small>
+                </div>
+
+                <div class="plan-card">
+                    <span>02</span>
+                    <h3>We'll come to you</h3>
+                    <p>Already have a venue? BlissBoard can bring the activities, materials, hosts and complete experience to your location.</p>
+                    <small>Corporate · College · School · Private Events</small>
+                </div>
+
+                <div class="plan-card">
+                    <span>03</span>
+                    <h3>Need a venue?</h3>
+                    <p>Don't have a venue yet? Tell us what you're planning and we'll help you find a suitable space.</p>
+                    <small>Small Gatherings · Parties · Custom Events</small>
+                </div>
+
+                <div class="plan-card">
+                    <span>04</span>
+                    <h3>Something different?</h3>
+                    <p>Tell us your idea. We'll work with you to create an experience that feels just right.</p>
+                    <small>Your idea · Your occasion · Your people</small>
+                </div>
 
             </div>
 
-            <p class="hero-note">
-                ✿ Creativity, connection and good energy
+
+            <div class="contact-panel">
+                <div>
+                    <span class="section-tag">LET'S MAKE IT HAPPEN</span>
+                    <h2>Let's create<br><em>something special.</em></h2>
+                    <p>Share your idea with us and let's plan something memorable.</p>
+                </div>
+
+                <form id="enquiryForm">
+
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" placeholder="Enter your name" required>
+
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" placeholder="you@example.com" required>
+
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" placeholder="+91 98765 43210" required>
+
+                    <label for="eventType">I'm planning</label>
+                    <select id="eventType" required>
+                        <option value="">Select an event type</option>
+                        <option>Creative Workshop</option>
+                        <option>Birthday Celebration</option>
+                        <option>College Event</option>
+                        <option>Corporate Event</option>
+                        <option>Private Gathering</option>
+                        <option>Other Custom Event</option>
+                    </select>
+
+                    <label for="guests">Expected Guests</label>
+                    <input type="number" id="guests" min="1" placeholder="e.g. 25">
+
+                    <label for="city">City</label>
+                    <input type="text" id="city" placeholder="Delhi / Gurugram / Noida">
+
+                    <label for="message">Tell us about your idea</label>
+                    <textarea id="message" rows="4" placeholder="Tell us what you have in mind..."></textarea>
+
+                    <button type="submit" class="primary-btn form-submit">
+                        Send Enquiry ↗
+                    </button>
+
+                    <p class="form-note">
+                        Your email app will open with your enquiry details ready to send.
+                    </p>
+
+                </form>
+            </div>
+
+        </section>
+
+
+        <!-- FINAL CTA -->
+        <section class="final-cta">
+            <div class="section-tag">YOUR NEXT EXPERIENCE</div>
+            <h2>Do something<br>you'll <em>remember.</em></h2>
+            <a href="#experiences" class="primary-btn">Explore BlissBoard ↗</a>
+        </section>
+
+    </main>
+
+
+    <!-- EXPERIENCE MODAL -->
+    <div class="modal" id="experienceModal">
+        <div class="modal-content">
+            <button class="modal-close" id="closeExperienceModal">×</button>
+            <span class="section-tag">EXPLORE BLISSBOARD</span>
+            <h2 id="modalTitle">Experience</h2>
+            <p id="modalDescription"></p>
+            <p class="modal-note">
+                Interested in this experience? Contact BlissBoard for current
+                dates, availability, venue and pricing.
             </p>
-
+            <a href="#plan" class="primary-btn" id="modalEnquiryLink">Enquire Now ↗</a>
         </div>
-
-
-        <div class="hero-image">
-
-            <div class="circle circle-one"></div>
-            <div class="circle circle-two"></div>
-
-            <div class="creative-card">
-                <div class="creative-circle"></div>
-                <div class="creative-shape"></div>
-
-                <h3>YOUR KIND<br>OF HAPPY ♡</h3>
-            </div>
-
-            <div class="floating-text">
-                CREATE<br>YOUR VIBE
-            </div>
-
-            <div class="flower">✿</div>
-
-        </div>
-
-    </section>
-
-
-    <!-- ABOUT SECTION -->
-
-    <section class="about section" id="about">
-
-        <p class="section-label">01 / THE BLISSBOARD FEELING</p>
-
-        <div class="about-content">
-
-            <h2>
-                Not just something<br>
-                to <em>attend.</em><br>
-                Something to remember.
-            </h2>
-
-            <div class="about-text">
-
-                <p>
-                    BlissBoard brings people together through
-                    creative experiences that feel easy,
-                    welcoming and genuinely fun.
-                </p>
-
-                <p>
-                    Think art-filled afternoons, hands-on
-                    workshops and intimate gatherings where
-                    the best part is simply being there.
-                </p>
-
-                <a href="https://www.instagram.com/blissboard_official/"
-                   target="_blank" class="text-link">
-                    Discover Our World ↗
-                </a>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- EXPERIENCES SECTION -->
-
-    <section class="experiences section" id="experiences">
-
-        <p class="section-label">02 / FIND YOUR KIND OF JOY</p>
-
-        <div class="experience-heading">
-
-            <h2>
-                Pick a mood.<br>
-                <em>We'll make a moment.</em>
-            </h2>
-
-            <p>
-                Explore creative experiences and
-                beautiful moments with BlissBoard.
-            </p>
-
-        </div>
-
-
-        <!-- FILTER BUTTONS -->
-
-        <div class="filters">
-
-            <button class="filter active" data-filter="all">
-                Everything
-            </button>
-
-            <button class="filter" data-filter="art">
-                Art & Craft
-            </button>
-
-            <button class="filter" data-filter="mindful">
-                Mindful Moments
-            </button>
-
-            <button class="filter" data-filter="social">
-                Social Experiences
-            </button>
-
-        </div>
-
-
-        <!-- EXPERIENCE CARDS -->
-
-        <div class="experience-grid">
-
-            <div class="experience-card" data-category="art">
-
-                <div class="experience-image paint">
-                    🎨
-                    <span>GET CREATIVE</span>
-                </div>
-
-                <p class="category">ART & CRAFT</p>
-
-                <h3>Paint, Play, Repeat.</h3>
-
-                <p>
-                    Relaxed art sessions where
-                    your imagination takes the lead.
-                </p>
-
-                <button class="card-btn"
-                    data-experience="Art and Craft Workshop">
-                    I'm Interested ↗
-                </button>
-
-            </div>
-
-
-            <div class="experience-card" data-category="mindful">
-
-                <div class="experience-image vision">
-                    ✂️
-                    <span>DREAM IT UP</span>
-                </div>
-
-                <p class="category">MINDFUL MOMENTS</p>
-
-                <h3>Vision Board Sessions.</h3>
-
-                <p>
-                    Turn your goals and dreams
-                    into something you can see.
-                </p>
-
-                <button class="card-btn"
-                    data-experience="Vision Board Workshop">
-                    I'm Interested ↗
-                </button>
-
-            </div>
-
-
-            <div class="experience-card" data-category="art">
-
-                <div class="experience-image craft">
-                    🌼
-                    <span>MADE BY YOU</span>
-                </div>
-
-                <p class="category">ART & CRAFT</p>
-
-                <h3>Little Things, Made Lovely.</h3>
-
-                <p>
-                    Explore creative crafts and
-                    make something special.
-                </p>
-
-                <button class="card-btn"
-                    data-experience="Creative Craft Workshop">
-                    I'm Interested ↗
-                </button>
-
-            </div>
-
-
-            <div class="experience-card" data-category="social">
-
-                <div class="experience-image social">
-                    ☀️
-                    <span>COME AS YOU ARE</span>
-                </div>
-
-                <p class="category">SOCIAL EXPERIENCES</p>
-
-                <h3>Meet, Mingle & Unwind.</h3>
-
-                <p>
-                    Meet new people and enjoy
-                    beautiful shared experiences.
-                </p>
-
-                <button class="card-btn"
-                    data-experience="Social Meetup">
-                    I'm Interested ↗
-                </button>
-
-            </div>
-
-        </div>
-
-        <p class="demo-note">
-            Experience examples are illustrative.
-            Contact BlissBoard for current events and availability.
-        </p>
-
-    </section>
-
-
-    <!-- QUOTE SECTION -->
-
-    <section class="quote-section">
-
-        <div class="quote-icon">✳</div>
-
-        <h2>
-            You don't have to be good at something<br>
-            to <em>have a good time.</em>
-        </h2>
-
-        <p>THAT'S THE BLISSBOARD WAY</p>
-
-    </section>
-
-
-    <!-- HOW IT WORKS -->
-
-    <section class="how section" id="how">
-
-        <p class="section-label">03 / EASY DOES IT</p>
-
-        <h2>
-            Three little steps.<br>
-            <em>One lovely memory.</em>
-        </h2>
-
-        <div class="steps">
-
-            <div class="step">
-
-                <span>01</span>
-
-                <div class="step-icon">♡</div>
-
-                <h3>Find Your Vibe</h3>
-
-                <p>
-                    Explore the kind of creative
-                    experience you want to enjoy.
-                </p>
-
-            </div>
-
-
-            <div class="step">
-
-                <span>02</span>
-
-                <div class="step-icon">✳</div>
-
-                <h3>Say Hello</h3>
-
-                <p>
-                    Contact our team to know about
-                    upcoming sessions and details.
-                </p>
-
-            </div>
-
-
-            <div class="step">
-
-                <span>03</span>
-
-                <div class="step-icon">☀</div>
-
-                <h3>Show Up & Enjoy</h3>
-
-                <p>
-                    Bring your curiosity and
-                    enjoy a wonderful experience.
-                </p>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- CONTACT SECTION -->
-
-    <section class="contact section" id="contact">
-
-        <p class="section-label">04 / YOUR NEXT GOOD PLAN</p>
-
-        <h2>
-            Ready for a little<br>
-            <em>more bliss?</em>
-        </h2>
-
-        <p>
-            Want to join a workshop, plan a private
-            celebration or collaborate with us?
-            We'd love to hear from you.
-        </p>
-
-        <a href="https://www.instagram.com/blissboard_official/"
-           target="_blank" class="contact-btn">
-
-            DM Us on Instagram ↗
-
-        </a>
-
-        <p class="location">
-            CREATING MOMENTS ACROSS DELHI-NCR
-        </p>
-
-    </section>
+    </div>
 
 
     <!-- FOOTER -->
+    <footer class="footer">
 
-    <footer>
+        <div class="footer-main">
 
-        <a href="#home" class="logo">
-            <span class="logo-icon">b.</span>
-            blissboard<span>.</span>
-        </a>
+            <div class="footer-brand">
+                <a href="#home" class="logo footer-logo">
+                    <span class="logo-icon">B</span>
+                    <span>blissboard<span class="logo-dot">.</span></span>
+                </a>
 
-        <p>Make room for joy.</p>
+                <p>Creative experiences<br>for curious people.</p>
 
-        <div class="footer-links">
+                <a href="mailto:officialblissboard@gmail.com">
+                    officialblissboard@gmail.com
+                </a>
 
-            <a href="#home">Home</a>
+                <a href="https://wa.me/918505807276" target="_blank" rel="noopener">
+                    WhatsApp · +91 85058 07276
+                </a>
+            </div>
 
-            <a href="#experiences">Experiences</a>
 
-            <a href="#about">About</a>
+            <div class="footer-column">
+                <h4>Explore</h4>
+                <a href="#experiences">Experiences</a>
+                <a href="#events">Events</a>
+                <a href="#about">About</a>
+                <a href="#plan">Plan an Event</a>
+            </div>
 
-            <a href="https://www.instagram.com/blissboard_official/"
-               target="_blank">
-                Instagram ↗
-            </a>
+
+            <div class="footer-column">
+                <h4>Follow Along</h4>
+
+                <a href="https://www.instagram.com/blissboard_official/" target="_blank" rel="noopener">
+                    Instagram ↗
+                </a>
+
+                <a href="https://in.linkedin.com/company/blissboardofficial" target="_blank" rel="noopener">
+                    LinkedIn ↗
+                </a>
+
+                <a href="https://www.youtube.com/results?search_query=BlissBoard+Official" target="_blank" rel="noopener">
+                    Find us on YouTube ↗
+                </a>
+            </div>
 
         </div>
 
-        <small>
-            © <span id="year"></span> BlissBoard. All rights reserved.
-        </small>
+
+        <div class="footer-bottom">
+            <span>© <span id="year"></span> BlissBoard. All rights reserved.</span>
+            <span>Made for creative experiences. ✦</span>
+        </div>
 
     </footer>
 
 
-    <!-- ENQUIRY POPUP -->
-
-    <div class="modal" id="enquiryModal">
-
-        <div class="modal-content">
-
-            <button id="closeModal" class="close-btn">×</button>
-
-            <h2>Let's make it <em>happen!</em></h2>
-
-            <p id="selectedExperience">
-                Interested in our experiences?
-            </p>
-
-            <a href="https://www.instagram.com/blissboard_official/"
-               target="_blank" class="primary-btn">
-                Continue on Instagram ↗
-            </a>
-
-        </div>
-
-    </div>
-
+    <button class="back-top" id="backTop" aria-label="Back to top">↑</button>
 
     <script src="script.js"></script>
 
