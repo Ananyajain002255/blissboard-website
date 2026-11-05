@@ -1,346 +1,363 @@
-// BLISSBOARD - WEBSITE INTERACTIONS
+
+// =====================================
+// BLISSBOARD WEBSITE - MAIN JAVASCRIPT
+// =====================================
+
+// 1. ALL ACTIVITIES AND PRICES
+// District price = first price column
+// BookMyShow price = second price column
 
 const activities = [
-  { name: "Acrylic Affair – Canvas Painting", district: 699, bms: 699, category: "painting", tag: "Painting", description: "Create your own colourful canvas and take home a piece of art.", image: "https://blissboardofficial.netlify.app/assets/activities/texture-landscape.png" },
-  { name: "Resin Jewellery", district: 899, bms: 899, category: "resin", tag: "Resin Art", description: "Design beautiful personalised resin jewellery.", image: "https://images.unsplash.com/photo-1617038220319-276d3cfab638?auto=format&fit=crop&w=900&q=85" },
-  { name: "Texture Art", district: 799, bms: 799, category: "painting", tag: "Painting", description: "Explore textures, patterns and beautiful artistic details.", image: "https://blissboardofficial.netlify.app/assets/activities/texture-landscape.png" },
-  { name: "Dot Mandala Art", district: 799, bms: 799, category: "painting", tag: "Painting", description: "Create calming mandala patterns with colourful dots.", image: "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?auto=format&fit=crop&w=900&q=85" },
-  { name: "Lippan Art", district: 799, bms: 799, category: "painting", tag: "Painting", description: "Try traditional mud and mirror art with a modern touch.", image: "https://images.unsplash.com/photo-1577083552431-6e5fd01aa342?auto=format&fit=crop&w=900&q=85" },
-  { name: "Japanese Kintsugi", district: 799, bms: 799, category: "creative", tag: "Creative Fun", description: "Discover the beautiful art of highlighting broken pieces.", image: "https://blissboardofficial.netlify.app/assets/activities/kintsugi-landscape.png" },
-  { name: "Tumbler Painting", district: 799, bms: 799, category: "painting", tag: "Painting", description: "Decorate your tumbler with your own creative designs.", image: "https://blissboardofficial.netlify.app/assets/activities/tumbler-landscape.png" },
-  { name: "Resin Beach Art", district: 799, bms: 799, category: "resin", tag: "Resin Art", description: "Bring ocean-inspired waves and beach vibes to your artwork.", image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=85" },
-  { name: "Resin Koi Pond", district: 799, bms: 799, category: "resin", tag: "Resin Art", description: "Create a miniature pond-inspired resin artwork.", image: "https://blissboardofficial.netlify.app/assets/activities/resin-koi-landscape.png" },
-  { name: "Resin Lotus Pond", district: 799, bms: 799, category: "resin", tag: "Resin Art", description: "Make a beautiful lotus pond inspired resin piece.", image: "https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&w=900&q=85" },
-  { name: "Pottery", district: 499, bms: 499, category: "clay", tag: "Clay & Pottery", description: "Get hands-on with clay and shape something of your own.", image: "https://blissboardofficial.netlify.app/assets/activities/pottery-landscape.png" },
-  { name: "Clay Therapy", district: 799, bms: 799, category: "clay", tag: "Clay & Pottery", description: "Slow down, relax and enjoy a playful clay session.", image: "https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?auto=format&fit=crop&w=900&q=85" },
-  { name: "Coffee Painting", district: 799, bms: 799, category: "painting", tag: "Painting", description: "Create warm-toned art using coffee as your painting medium.", image: "https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=900&q=85" },
-  { name: "Pichwai Painting", district: 699, bms: 699, category: "painting", tag: "Painting", description: "Explore the intricate beauty of traditional Pichwai art.", image: "https://images.unsplash.com/photo-1579783901586-d88db74b4fe4?auto=format&fit=crop&w=900&q=85" },
-  { name: "Madhubani Painting", district: 699, bms: 699, category: "painting", tag: "Painting", description: "Try colourful folk-art patterns inspired by Madhubani painting.", image: "https://images.unsplash.com/photo-1577083552431-6e5fd01aa342?auto=format&fit=crop&w=900&q=85" },
-  { name: "Clay Flower Bouquet", district: 799, bms: 799, category: "clay", tag: "Clay & Pottery", description: "Craft charming flowers from clay and make a bouquet.", image: "https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=900&q=85" },
-  { name: "Knife Painting", district: 799, bms: 799, category: "painting", tag: "Painting", description: "Experiment with palette-knife strokes and bold textures.", image: "https://images.unsplash.com/photo-1541961017774-22349e4a1262?auto=format&fit=crop&w=900&q=85" },
-  { name: "Clay Mug Painting", district: 699, bms: 699, category: "clay", tag: "Clay & Pottery", description: "Personalise a mug with colours and your favourite designs.", image: "https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?auto=format&fit=crop&w=900&q=85" },
-  { name: "Moon Lamp", district: 899, bms: 899, category: "creative", tag: "Creative Fun", description: "Create a dreamy moon-inspired lamp for your space.", image: "https://blissboardofficial.netlify.app/assets/activities/moon-lamp-landscape.png" },
-  { name: "Trinket Tray", district: 799, bms: 799, category: "resin", tag: "Resin Art", description: "Design a decorative tray to keep your little treasures.", image: "https://images.unsplash.com/photo-1490312278390-ab64016e0aa9?auto=format&fit=crop&w=900&q=85" },
-  { name: "Miniature Food Plate", district: 699, bms: 699, category: "creative", tag: "Creative Fun", description: "Make adorable miniature food art on a tiny plate.", image: "https://blissboardofficial.netlify.app/assets/activities/miniature-food-landscape.png" },
-  { name: "Clay Date – Couple Pass", district: 899, bms: 899, category: "clay", tag: "Clay & Pottery", description: "A creative clay date designed to enjoy together as a couple.", image: "https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?auto=format&fit=crop&w=900&q=85" },
-  { name: "Clay Ganpati", district: 699, bms: 699, category: "clay", tag: "Clay & Pottery", description: "Shape a beautiful Ganpati idol with your own hands.", image: "https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?auto=format&fit=crop&w=900&q=85" },
-  { name: "Rage Therapy", district: 799, bms: 799, category: "creative", tag: "Creative Fun", description: "Let go of stress through a fun and energetic experience.", image: "https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=900&q=85" },
-  { name: "Mandala Coaster Painting", district: 699, bms: 699, category: "painting", tag: "Painting", description: "Paint detailed mandala patterns on your own coasters.", image: "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?auto=format&fit=crop&w=900&q=85" },
-  { name: "Playdate with Parents", district: 899, bms: 899, category: "creative", tag: "Creative Fun", description: "Spend quality time with your parents through creativity.", image: "https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&w=900&q=85" },
-  { name: "Clay Sculpting", district: 699, bms: 699, category: "clay", tag: "Clay & Pottery", description: "Turn a simple piece of clay into a unique sculpture.", image: "https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?auto=format&fit=crop&w=900&q=85" },
-  { name: "Painting Using Clay", district: 699, bms: 699, category: "clay", tag: "Clay & Pottery", description: "Explore a different way to create art using clay.", image: "https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?auto=format&fit=crop&w=900&q=85" },
-  { name: "Resin Geode Art", district: 799, bms: 799, category: "resin", tag: "Resin Art", description: "Create a sparkling geode-inspired resin artwork.", image: "https://images.unsplash.com/photo-1579783901586-d88db74b4fe4?auto=format&fit=crop&w=900&q=85" },
-  { name: "Boho Texture Art", district: 799, bms: 799, category: "painting", tag: "Painting", description: "Make a textured artwork inspired by bohemian decor.", image: "https://blissboardofficial.netlify.app/assets/activities/texture-landscape.png" },
-  { name: "Bedazzle Your Canvas", district: 899, bms: 899, category: "creative", tag: "Creative Fun", description: "Add sparkle, gems and personality to your canvas.", image: "https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=900&q=85" },
-  { name: "Finger Painting", district: 699, bms: 699, category: "painting", tag: "Painting", description: "Get playful with colours and create art with your fingers.", image: "https://images.unsplash.com/photo-1501472312651-726afe119ff1?auto=format&fit=crop&w=900&q=85" },
-  { name: "Pottery for Kids", district: 699, bms: 699, category: "clay", tag: "Clay & Pottery", description: "A fun, hands-on pottery experience for young creators.", image: "https://blissboardofficial.netlify.app/assets/activities/pottery-landscape.png" },
-  { name: "Vision Board", district: 899, bms: 899, category: "creative", tag: "Creative Fun", description: "Visualise your goals and create a board full of inspiration.", image: "https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=900&q=85" }
+  ["Acrylic Affair – Canvas Painting",699,699,"painting","https://blissboardofficial.netlify.app/assets/activities/texture-landscape.png","Paint your own canvas and take home a colourful creation."],
+  ["Resin Jewellery",899,899,"resin","https://blissboardofficial.netlify.app/assets/activities/resin-koi-landscape.png","Create beautiful personalised resin jewellery."],
+  ["Texture Art",799,799,"painting","https://blissboardofficial.netlify.app/assets/activities/texture-landscape.png","Explore textures, patterns and artistic details."],
+  ["Dot Mandala Art",799,799,"painting","https://blissboardofficial.netlify.app/assets/activities/tote-bag-landscape.png","Create calming mandala patterns with colourful dots."],
+  ["Lippan Art",799,799,"painting","https://blissboardofficial.netlify.app/assets/activities/tote-bag-landscape.png","Try traditional mirror art with a creative touch."],
+  ["Japanese Kintsugi",799,799,"creative","https://blissboardofficial.netlify.app/assets/activities/kintsugi-landscape.png","Discover the Japanese art of celebrating imperfections."],
+  ["Tumbler Painting",799,799,"painting","https://blissboardofficial.netlify.app/assets/activities/tumbler-landscape.png","Decorate your tumbler with your own designs."],
+  ["Resin Beach Art",799,799,"resin","https://blissboardofficial.netlify.app/assets/activities/resin-koi-landscape.png","Bring ocean-inspired waves into your artwork."],
+  ["Resin Koi Pond",799,799,"resin","https://blissboardofficial.netlify.app/assets/activities/resin-koi-landscape.png","Create a miniature pond-inspired resin artwork."],
+  ["Resin Lotus Pond",799,799,"resin","https://blissboardofficial.netlify.app/assets/activities/resin-koi-landscape.png","Make a beautiful lotus pond-inspired artwork."],
+  ["Pottery",499,499,"clay","https://blissboardofficial.netlify.app/assets/activities/pottery-landscape.png","Get hands-on with clay and shape something of your own."],
+  ["Clay Therapy",799,799,"clay","https://blissboardofficial.netlify.app/assets/activities/pottery-landscape.png","Relax and enjoy a playful clay session."],
+  ["Coffee Painting",799,799,"painting","https://blissboardofficial.netlify.app/assets/activities/texture-landscape.png","Create warm-toned art using coffee as your medium."],
+  ["Pichwai Painting",699,699,"painting","https://blissboardofficial.netlify.app/assets/activities/tote-bag-landscape.png","Explore the beauty of traditional Pichwai art."],
+  ["Madhubani Painting",699,699,"painting","https://blissboardofficial.netlify.app/assets/activities/tote-bag-landscape.png","Try colourful folk-art patterns inspired by Madhubani."],
+  ["Clay Flower Bouquet",799,799,"clay","https://blissboardofficial.netlify.app/assets/activities/pottery-landscape.png","Craft charming flowers from clay."],
+  ["Knife Painting",799,799,"painting","https://blissboardofficial.netlify.app/assets/activities/texture-landscape.png","Experiment with palette-knife strokes and textures."],
+  ["Clay Mug Painting",699,699,"clay","https://blissboardofficial.netlify.app/assets/activities/pottery-landscape.png","Personalise a mug with your favourite designs."],
+  ["Moon Lamp",899,899,"creative","https://blissboardofficial.netlify.app/assets/activities/moon-lamp-landscape.png","Create a dreamy moon-inspired lamp for your room."],
+  ["Trinket Tray",799,799,"resin","https://blissboardofficial.netlify.app/assets/activities/resin-koi-landscape.png","Design a decorative tray for your little treasures."],
+  ["Miniature Food Plate",699,699,"creative","https://blissboardofficial.netlify.app/assets/activities/miniature-food-landscape.png","Make adorable miniature food art on a tiny plate."],
+  ["Clay Date – Couple Pass",899,899,"clay","https://blissboardofficial.netlify.app/assets/activities/pottery-landscape.png","Enjoy a creative clay date together."],
+  ["Clay Ganpati",699,699,"clay","https://blissboardofficial.netlify.app/assets/activities/pottery-landscape.png","Shape a beautiful Ganpati idol with your hands."],
+  ["Rage Therapy",799,799,"creative","https://blissboardofficial.netlify.app/assets/activities/texture-landscape.png","Enjoy an energetic and creative experience."],
+  ["Mandala Coaster Painting",699,699,"painting","https://blissboardofficial.netlify.app/assets/activities/tote-bag-landscape.png","Paint detailed mandala patterns on your coasters."],
+  ["Playdate with Parents",899,899,"creative","https://blissboardofficial.netlify.app/assets/activities/miniature-food-landscape.png","Spend quality time with your parents through creativity."],
+  ["Clay Sculpting",699,699,"clay","https://blissboardofficial.netlify.app/assets/activities/pottery-landscape.png","Turn a simple piece of clay into a sculpture."],
+  ["Painting Using Clay",699,699,"clay","https://blissboardofficial.netlify.app/assets/activities/texture-landscape.png","Explore a different way to create art using clay."],
+  ["Resin Geode Art",799,799,"resin","https://blissboardofficial.netlify.app/assets/activities/resin-koi-landscape.png","Create a sparkling geode-inspired artwork."],
+  ["Boho Texture Art",799,799,"painting","https://blissboardofficial.netlify.app/assets/activities/texture-landscape.png","Make a textured artwork inspired by bohemian decor."],
+  ["Bedazzle Your Canvas",899,899,"creative","https://blissboardofficial.netlify.app/assets/activities/tote-bag-landscape.png","Add sparkle, gems and personality to your canvas."],
+  ["Finger Painting",699,699,"painting","https://blissboardofficial.netlify.app/assets/activities/tote-bag-landscape.png","Get playful with colours and finger painting."],
+  ["Pottery for Kids",699,699,"clay","https://blissboardofficial.netlify.app/assets/activities/pottery-landscape.png","A fun pottery experience for young creators."],
+  ["Vision Board",899,899,"creative","https://blissboardofficial.netlify.app/assets/activities/miniature-food-landscape.png","Visualise your goals and create an inspiring board."]
 ];
 
-const grid = document.getElementById("experienceGrid");
+// 2. PAST EVENT PHOTOS FROM BLISSBOARD WEBSITE
+const pastEvents = [
+  {
+    title: "Resin Koi Pond Gathering",
+    type: "CREATIVE EXPERIENCE",
+    image: "https://blissboardofficial.netlify.app/assets/event-1.jpg",
+    description: "A lovely creative gathering filled with miniature koi pond art and happy memories."
+  },
+  {
+    title: "Creative Flower Workshop",
+    type: "WORKSHOP MOMENTS",
+    image: "https://blissboardofficial.netlify.app/assets/event-2.jpg",
+    description: "Friends coming together to create colourful handmade pieces."
+  },
+  {
+    title: "Tumbler Painting Moments",
+    type: "CREATIVE EXPERIENCE",
+    image: "https://blissboardofficial.netlify.app/assets/event-3.jpg",
+    description: "A fun day of personalising tumblers and making memories."
+  }
+];
+
+// 3. HELPER FUNCTION
+function escapeHTML(value) {
+  return String(value).replace(/[&<>"']/g, char => ({
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    '"': "&quot;",
+    "'": "&#039;"
+  })[char]);
+}
+
+function whatsappLink(activity) {
+  const message =
+    `Hi BlissBoard! I am interested in ${activity[0]}. ` +
+    `District price: ₹${activity[1]}. ` +
+    `BookMyShow price: ₹${activity[2]}. ` +
+    `Please share the available dates, venue and booking details.`;
+
+  return "https://wa.me/918505807276?text=" + encodeURIComponent(message);
+}
+
+// 4. EXPERIENCE CARDS
+const experienceGrid = document.getElementById("experienceGrid");
 const searchInput = document.getElementById("experienceSearch");
 const sortSelect = document.getElementById("sortExperiences");
 const resultCount = document.getElementById("resultCount");
 const noResults = document.getElementById("noResults");
 
-let activeCategory = "all";
-let savedOnly = false;
-let savedActivities = JSON.parse(localStorage.getItem("blissboardSaved") || "[]");
+let activeFilter = "all";
+let savedActivities = [];
 
-function escapeHTML(value) {
-  return String(value).replace(/[&<>"']/g, char => ({
-    "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#039;"
-  })[char]);
+try {
+  savedActivities = JSON.parse(localStorage.getItem("blissboardSaved") || "[]");
+  if (!Array.isArray(savedActivities)) savedActivities = [];
+} catch {
+  savedActivities = [];
 }
 
 function renderActivities() {
-  let list = activities.map((activity, index) => ({ ...activity, index }));
+  let list = activities.map((activity, index) => ({
+    activity,
+    index
+  }));
 
-  if (activeCategory !== "all") {
-    list = list.filter(item => item.category === activeCategory);
+  if (activeFilter !== "all") {
+    list = list.filter(item => item.activity[3] === activeFilter);
   }
 
-  const query = searchInput.value.trim().toLowerCase();
-  if (query) {
+  const search = searchInput.value.trim().toLowerCase();
+
+  if (search) {
     list = list.filter(item =>
-      item.name.toLowerCase().includes(query) ||
-      item.description.toLowerCase().includes(query) ||
-      item.tag.toLowerCase().includes(query)
+      item.activity[0].toLowerCase().includes(search) ||
+      item.activity[5].toLowerCase().includes(search)
     );
   }
 
-  if (savedOnly) {
-    list = list.filter(item => savedActivities.includes(item.name));
+  if (sortSelect.value === "low") {
+    list.sort((a, b) => a.activity[1] - b.activity[1]);
   }
 
-  if (sortSelect.value === "low") list.sort((a, b) => a.district - b.district);
-  if (sortSelect.value === "high") list.sort((a, b) => b.district - a.district);
-  if (sortSelect.value === "az") list.sort((a, b) => a.name.localeCompare(b.name));
+  if (sortSelect.value === "high") {
+    list.sort((a, b) => b.activity[1] - a.activity[1]);
+  }
 
-  resultCount.textContent = `${list.length} experience${list.length === 1 ? "" : "s"}`;
-  noResults.hidden = list.length !== 0;
+  if (sortSelect.value === "az") {
+    list.sort((a, b) => a.activity[0].localeCompare(b.activity[0]));
+  }
 
-  grid.innerHTML = list.map(item => `
-    <article class="experience-card">
-      <div class="card-image">
-        <img src="${item.image}" alt="${escapeHTML(item.name)}" loading="lazy"
-             onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=900&q=85';">
-        <span class="card-tag">${escapeHTML(item.tag)}</span>
-        <button class="save-btn ${savedActivities.includes(item.name) ? "saved" : ""}"
-                data-save="${item.index}" aria-label="Save ${escapeHTML(item.name)}">
-          ${savedActivities.includes(item.name) ? "♥" : "♡"}
-        </button>
-      </div>
-      <div class="card-content">
-        <h3>${escapeHTML(item.name)}</h3>
-        <p class="card-description">${escapeHTML(item.description)}</p>
-        <div class="price-boxes">
-          <div class="price-box">
-            <span>District Price</span>
-            <strong>₹${item.district}</strong>
+  resultCount.textContent =
+    `${list.length} experiences available`;
+
+  noResults.hidden = list.length > 0;
+
+  experienceGrid.innerHTML = list.map(({ activity, index }) => {
+    const isSaved = savedActivities.includes(index);
+
+    return `
+      <article class="experience-card">
+        <div class="card-image">
+          <img
+            src="${activity[4]}"
+            alt="${escapeHTML(activity[0])}"
+            loading="lazy"
+            onerror="this.onerror=null;this.src='https://blissboardofficial.netlify.app/assets/activities/tote-bag-landscape.png';"
+          >
+          <span class="card-tag">${escapeHTML(activity[3])}</span>
+          <button
+            class="save-btn ${isSaved ? "saved" : ""}"
+            data-save="${index}"
+            aria-label="Save activity"
+            type="button"
+          >${isSaved ? "♥" : "♡"}</button>
+        </div>
+
+        <div class="card-content">
+          <h3>${escapeHTML(activity[0])}</h3>
+          <p class="card-description">${escapeHTML(activity[5])}</p>
+
+          <div class="price-boxes">
+            <div class="price-box">
+              <span>District Price</span>
+              <strong>₹${activity[1]}</strong>
+            </div>
+            <div class="price-box">
+              <span>BookMyShow Price</span>
+              <strong>₹${activity[2]}</strong>
+            </div>
           </div>
-          <div class="price-box">
-            <span>BookMyShow Price</span>
-            <strong>₹${item.bms}</strong>
+
+          <div class="card-actions">
+            <button class="details-btn" data-details="${index}" type="button">
+              Details
+            </button>
+            <a class="book-btn"
+               href="${whatsappLink(activity)}"
+               target="_blank"
+               rel="noopener">
+              Enquire / Book ↗
+            </a>
           </div>
         </div>
-        <div class="card-actions">
-          <button class="details-btn" data-details="${item.index}">View details</button>
-          <a class="book-btn" href="${makeWhatsAppLink(item, "booking")}" target="_blank" rel="noopener">Enquire / Book ↗</a>
-        </div>
-      </div>
-    </article>
-  `).join("");
-
-  document.getElementById("savedCount").textContent = savedActivities.length;
+      </article>
+    `;
+  }).join("");
 }
 
-function makeWhatsAppLink(item, purpose) {
-  const message = purpose === "booking"
-    ? `Hi BlissBoard! I am interested in ${item.name}. District price: ₹${item.district}. BookMyShow price: ₹${item.bms}. Please share the available dates, location and booking details.`
-    : `Hi BlissBoard! I would like to know more about ${item.name}. Please share the details.`;
-
-  return `https://wa.me/918505807276?text=${encodeURIComponent(message)}`;
-}
-
-// Search, filters and sorting
+// 5. SEARCH AND SORT
 searchInput.addEventListener("input", renderActivities);
 sortSelect.addEventListener("change", renderActivities);
 
+// 6. FILTER BUTTONS
 document.querySelectorAll(".filter").forEach(button => {
   button.addEventListener("click", () => {
-    document.querySelectorAll(".filter").forEach(btn => btn.classList.remove("active"));
+    document.querySelectorAll(".filter").forEach(btn => {
+      btn.classList.remove("active");
+    });
+
     button.classList.add("active");
-    activeCategory = button.dataset.filter;
-    savedOnly = false;
-    document.getElementById("showSaved").classList.remove("active");
+    activeFilter = button.dataset.filter;
     renderActivities();
   });
 });
 
-document.getElementById("showSaved").addEventListener("click", () => {
-  savedOnly = !savedOnly;
-  document.getElementById("showSaved").classList.toggle("active", savedOnly);
-  renderActivities();
-});
-
-document.getElementById("resetFilters").addEventListener("click", () => {
-  searchInput.value = "";
-  activeCategory = "all";
-  savedOnly = false;
-  document.querySelectorAll(".filter").forEach(btn => {
-    btn.classList.toggle("active", btn.dataset.filter === "all");
-  });
-  document.getElementById("showSaved").classList.remove("active");
-  renderActivities();
-});
-
-// Save favourites and open activity details
-grid.addEventListener("click", event => {
+// 7. SAVE FAVOURITES
+experienceGrid.addEventListener("click", event => {
   const saveButton = event.target.closest("[data-save]");
   const detailsButton = event.target.closest("[data-details]");
 
   if (saveButton) {
-    const item = activities[Number(saveButton.dataset.save)];
-    if (savedActivities.includes(item.name)) {
-      savedActivities = savedActivities.filter(name => name !== item.name);
+    const index = Number(saveButton.dataset.save);
+
+    if (savedActivities.includes(index)) {
+      savedActivities = savedActivities.filter(item => item !== index);
+      showToast("Removed from favourites");
     } else {
-      savedActivities.push(item.name);
+      savedActivities.push(index);
+      showToast("Added to favourites ♥");
     }
-    localStorage.setItem("blissboardSaved", JSON.stringify(savedActivities));
+
+    localStorage.setItem(
+      "blissboardSaved",
+      JSON.stringify(savedActivities)
+    );
+
     renderActivities();
   }
 
   if (detailsButton) {
-    openActivityModal(activities[Number(detailsButton.dataset.details)]);
+    showActivityDetails(Number(detailsButton.dataset.details));
   }
 });
 
-// Activity details modal
-const modal = document.getElementById("activityModal");
-const modalContent = document.getElementById("modalContent");
+// 8. ACTIVITY DETAILS
+function showActivityDetails(index) {
+  const activity = activities[index];
 
-function openActivityModal(item) {
-  modalContent.innerHTML = `
-    <div class="eyebrow">${escapeHTML(item.tag)}</div>
-    <h2>${escapeHTML(item.name)}</h2>
-    <p>${escapeHTML(item.description)}</p>
-    <div class="modal-prices">
-      <div><span>District Price</span><strong>₹${item.district}</strong></div>
-      <div><span>BookMyShow Price</span><strong>₹${item.bms}</strong></div>
-    </div>
-    <p>Want to join this experience? Contact BlissBoard to confirm the date, venue and availability.</p>
-    <a class="btn btn-primary" href="${makeWhatsAppLink(item, "booking")}" target="_blank" rel="noopener">Enquire on WhatsApp ↗</a>
-  `;
-  modal.classList.add("open");
-  modal.setAttribute("aria-hidden", "false");
-  document.body.style.overflow = "hidden";
-}
+  const message =
+    `Hi BlissBoard! Please share more details about ${activity[0]}.`;
 
-function closeActivityModal() {
-  modal.classList.remove("open");
-  modal.setAttribute("aria-hidden", "true");
-  document.body.style.overflow = "";
-}
+  const link =
+    "https://wa.me/918505807276?text=" + encodeURIComponent(message);
 
-document.getElementById("closeModal").addEventListener("click", closeActivityModal);
-document.getElementById("modalBackdrop").addEventListener("click", closeActivityModal);
-document.addEventListener("keydown", event => {
-  if (event.key === "Escape") closeActivityModal();
-});
+  const oldModal = document.querySelector(".activity-modal");
+  if (oldModal) oldModal.remove();
 
-// Calendar: no official dates have been supplied yet.
-// Dates can be added to this object when BlissBoard confirms them.
-const calendarEvents = {
-  // Example format:
-  // "2026-11-15": [{ title: "Confirmed Workshop", location: "Delhi", note: "Time: 4 PM" }]
-};
+  const modal = document.createElement("div");
+  modal.className = "activity-modal";
 
-const calendarDays = document.getElementById("calendarDays");
-const monthYear = document.getElementById("monthYear");
-const selectedDateTitle = document.getElementById("selectedDateTitle");
-const calendarEventList = document.getElementById("calendarEventList");
-
-let calendarDate = new Date();
-calendarDate.setDate(1);
-let selectedDate = "";
-
-function dateKey(year, month, day) {
-  return `${year}-${String(month + 1).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
-}
-
-function renderCalendar() {
-  const year = calendarDate.getFullYear();
-  const month = calendarDate.getMonth();
-  const firstDay = new Date(year, month, 1).getDay();
-  const totalDays = new Date(year, month + 1, 0).getDate();
-  const today = new Date();
-  const todayKey = dateKey(today.getFullYear(), today.getMonth(), today.getDate());
-
-  monthYear.textContent = calendarDate.toLocaleDateString("en-IN", {
-    month: "long",
-    year: "numeric"
-  });
-
-  calendarDays.innerHTML = "";
-
-  for (let i = 0; i < firstDay; i++) {
-    const blank = document.createElement("span");
-    calendarDays.appendChild(blank);
-  }
-
-  for (let day = 1; day <= totalDays; day++) {
-    const key = dateKey(year, month, day);
-    const button = document.createElement("button");
-    button.className = "calendar-day";
-    button.textContent = day;
-    button.type = "button";
-
-    if (key === todayKey) button.classList.add("today");
-    if (key === selectedDate) button.classList.add("selected");
-    if (calendarEvents[key]) button.classList.add("has-event");
-
-    button.addEventListener("click", () => {
-      selectedDate = key;
-      renderCalendar();
-      showCalendarDate(key);
-    });
-
-    calendarDays.appendChild(button);
-  }
-}
-
-function showCalendarDate(key) {
-  const [year, month, day] = key.split("-").map(Number);
-  selectedDateTitle.textContent = new Date(year, month - 1, day).toLocaleDateString("en-IN", {
-    day: "numeric",
-    month: "long",
-    year: "numeric"
-  });
-
-  const events = calendarEvents[key] || [];
-
-  if (!events.length) {
-    calendarEventList.innerHTML = `
-      <div class="calendar-empty">
-        No confirmed event listed for this date.<br>
-        Enquire with BlissBoard about availability.
+  modal.innerHTML = `
+    <div class="activity-modal-backdrop"></div>
+    <div class="activity-modal-content">
+      <button class="activity-modal-close" type="button">×</button>
+      <p class="eyebrow">DISCOVER YOUR NEXT EXPERIENCE</p>
+      <h2>${escapeHTML(activity[0])}</h2>
+      <p>${escapeHTML(activity[5])}</p>
+      <div class="price-boxes">
+        <div class="price-box">
+          <span>District Price</span>
+          <strong>₹${activity[1]}</strong>
+        </div>
+        <div class="price-box">
+          <span>BookMyShow Price</span>
+          <strong>₹${activity[2]}</strong>
+        </div>
       </div>
-      <button class="btn btn-light calendar-enquiry" type="button">Enquire for this date ↗</button>
-    `;
-    calendarEventList.querySelector(".calendar-enquiry").addEventListener("click", () => {
-      document.getElementById("eventDate").value = key;
-      document.getElementById("message").value = `I would like to enquire about an event on ${key}.`;
-      document.getElementById("contact").scrollIntoView({ behavior: "smooth" });
-    });
-    return;
+      <a class="btn btn-primary" href="${link}" target="_blank" rel="noopener">
+        Enquire on WhatsApp ↗
+      </a>
+    </div>
+  `;
+
+  document.body.appendChild(modal);
+
+  function closeModal() {
+    modal.remove();
+    document.removeEventListener("keydown", escapeClose);
   }
 
-  calendarEventList.innerHTML = events.map(item => `
-    <div class="calendar-event">
-      <h4>${escapeHTML(item.title)}</h4>
-      <p>${escapeHTML(item.location || "Location to be confirmed")} · ${escapeHTML(item.note || "Details to be confirmed")}</p>
-    </div>
-  `).join("");
+  function escapeClose(event) {
+    if (event.key === "Escape") closeModal();
+  }
+
+  modal.querySelector(".activity-modal-close").addEventListener("click", closeModal);
+  modal.querySelector(".activity-modal-backdrop").addEventListener("click", closeModal);
+  document.addEventListener("keydown", escapeClose);
 }
 
-document.getElementById("prevMonth").addEventListener("click", () => {
-  calendarDate.setMonth(calendarDate.getMonth() - 1);
-  renderCalendar();
-});
+// 9. PAST EVENTS GALLERY
+const eventGrid = document.getElementById("eventGrid");
 
-document.getElementById("nextMonth").addEventListener("click", () => {
-  calendarDate.setMonth(calendarDate.getMonth() + 1);
-  renderCalendar();
-});
+eventGrid.innerHTML = pastEvents.map(event => `
+  <article class="event-card">
+    <img
+      src="${event.image}"
+      alt="${escapeHTML(event.title)}"
+      loading="lazy"
+    >
+    <div class="event-caption">
+      <span>${escapeHTML(event.type)}</span>
+      <h3>${escapeHTML(event.title)}</h3>
+      <p>${escapeHTML(event.description)}</p>
+    </div>
+  </article>
+`).join("");
 
-// Contact form: prepares an email draft; it does not store data online.
-document.getElementById("enquiryForm").addEventListener("submit", event => {
-  event.preventDefault();
+// 10. DARK / LIGHT MODE
+const themeToggle = document.getElementById("themeToggle");
 
-  const name = document.getElementById("name").value.trim();
-  const email = document.getElementById("email").value.trim();
-  const phone = document.getElementById("phone").value.trim();
-  const type = document.getElementById("eventType").value;
-  const guests = document.getElementById("guests").value;
-  const date = document.getElementById("eventDate").value;
-  const message = document.getElementById("message").value.trim();
+function setTheme(theme) {
+  const isDark = theme === "dark";
 
-  const subject = encodeURIComponent(`BlissBoard Enquiry - ${type}`);
-  const body = encodeURIComponent(
-    `Hello BlissBoard,\n\nI would like to enquire about an event.\n\nName: ${name}\nEmail: ${email}\nPhone: ${phone || "Not provided"}\nInterested in: ${type}\nNumber of guests: ${guests || "Not provided"}\nPreferred date: ${date || "Not decided"}\nMessage: ${message || "No additional message"}\n\nThank you.`
+  document.body.classList.toggle("dark", isDark);
+  themeToggle.textContent = isDark ? "☀" : "☾";
+  themeToggle.setAttribute(
+    "aria-label",
+    isDark ? "Switch to light mode" : "Switch to dark mode"
   );
 
-  window.location.href = `mailto:officialblissboard@gmail.com?subject=${subject}&body=${body}`;
+  document.querySelector('meta[name="theme-color"]')
+    .setAttribute("content", isDark ? "#211d24" : "#fff8f4");
+
+  try {
+    localStorage.setItem("blissboardTheme", theme);
+  } catch (error) {
+    console.warn("Theme preference could not be saved.", error);
+  }
+}
+
+let savedTheme = "light";
+
+try {
+  savedTheme = localStorage.getItem("blissboardTheme") || "light";
+} catch (error) {
+  savedTheme = "light";
+}
+
+setTheme(savedTheme);
+
+themeToggle.addEventListener("click", () => {
+  const currentlyDark = document.body.classList.contains("dark");
+  setTheme(currentlyDark ? "light" : "dark");
 });
 
-// Mobile navigation
+// 11. MOBILE MENU
 const menuToggle = document.getElementById("menuToggle");
 const navLinks = document.getElementById("navLinks");
 
 menuToggle.addEventListener("click", () => {
   navLinks.classList.toggle("open");
-  menuToggle.textContent = navLinks.classList.contains("open") ? "×" : "☰";
+  menuToggle.textContent =
+    navLinks.classList.contains("open") ? "×" : "☰";
 });
 
 navLinks.querySelectorAll("a").forEach(link => {
@@ -350,39 +367,74 @@ navLinks.querySelectorAll("a").forEach(link => {
   });
 });
 
-// Dark / light mode
-const themeToggle = document.getElementById("themeToggle");
+// 12. CONTACT FORM
+document.getElementById("enquiryForm").addEventListener("submit", event => {
+  event.preventDefault();
 
-if (localStorage.getItem("blissboardTheme") === "dark") {
-  document.body.classList.add("dark");
-  themeToggle.textContent = "☀";
-}
+  const name = document.getElementById("name").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const phone = document.getElementById("phone").value.trim();
+  const type = document.getElementById("eventType").value;
+  const guests = document.getElementById("guests").value;
+  const city = document.getElementById("city").value.trim();
+  const message = document.getElementById("message").value.trim();
 
-themeToggle.addEventListener("click", () => {
-  document.body.classList.toggle("dark");
-  const isDark = document.body.classList.contains("dark");
-  themeToggle.textContent = isDark ? "☀" : "☾";
-  localStorage.setItem("blissboardTheme", isDark ? "dark" : "light");
+  const subject = encodeURIComponent("BlissBoard Event Enquiry");
+
+  const body = encodeURIComponent(
+    `Hello BlissBoard,
+
+I would like to enquire about an event.
+
+Name: ${name}
+Email: ${email}
+Phone: ${phone || "Not provided"}
+Interested in: ${type}
+Expected guests: ${guests || "Not provided"}
+City: ${city || "Not provided"}
+
+Message:
+${message || "No additional message"}
+
+Thank you!`
+  );
+
+  window.location.href =
+    `mailto:officialblissboard@gmail.com?subject=${subject}&body=${body}`;
 });
 
-// Scroll progress and back-to-top button
-const progressBar = document.getElementById("scrollProgress");
+// 13. BACK TO TOP
 const backTop = document.getElementById("backTop");
 
 window.addEventListener("scroll", () => {
-  const scrollable = document.documentElement.scrollHeight - window.innerHeight;
-  const progress = scrollable > 0 ? (window.scrollY / scrollable) * 100 : 0;
-  progressBar.style.width = `${progress}%`;
-  backTop.classList.toggle("visible", window.scrollY > 450);
+  backTop.classList.toggle("visible", window.scrollY > 400);
 });
 
 backTop.addEventListener("click", () => {
-  window.scrollTo({ top: 0, behavior: "smooth" });
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
 });
 
-// Footer year
-document.getElementById("year").textContent = new Date().getFullYear();
+// 14. TOAST MESSAGE
+let toastTimer;
 
-// Initial render
+function showToast(message) {
+  const toast = document.getElementById("toast");
+  toast.textContent = message;
+  toast.classList.add("show");
+
+  clearTimeout(toastTimer);
+
+  toastTimer = setTimeout(() => {
+    toast.classList.remove("show");
+  }, 2200);
+}
+
+// 15. FOOTER YEAR
+document.getElementById("year").textContent =
+  new Date().getFullYear();
+
+// 16. INITIAL LOAD
 renderActivities();
-renderCalendar();
