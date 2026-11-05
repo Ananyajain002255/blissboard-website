@@ -1,651 +1,352 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="BlissBoard - Creative experiences, workshops and events.">
-    <title>BlissBoard | Create • Connect • Experience</title>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#fff8f3">
+  <title>BlissBoard | Create. Connect. Celebrate.</title>
+  <meta name="description" content="Discover creative workshops, art experiences and unforgettable events with BlissBoard.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<div class="scroll-progress" id="scrollProgress"></div>
+  <div class="announcement">
+    <span>✦</span> Make memories, not just plans. Explore creative experiences with BlissBoard! <span>✦</span>
+  </div>
 
-<header class="navbar">
-    <a href="#home" class="logo">
-        <span class="logo-icon">B</span>
-        <span>blissboard<span class="logo-dot">.</span></span>
-    </a>
+  <header class="header">
+    <nav class="navbar container">
+      <a href="#home" class="logo">bliss<span>board</span><i>✿</i></a>
 
-    <nav class="nav-links" id="navLinks">
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu">☰</button>
+
+      <div class="nav-links" id="navLinks">
         <a href="#home">Home</a>
         <a href="#experiences">Experiences</a>
-        <a href="#events">Events</a>
         <a href="#calendar">Calendar</a>
+        <a href="#celebrate">Events</a>
         <a href="#about">About</a>
-        <a href="#plan">Plan an Event</a>
+        <a href="#contact">Contact</a>
+        <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">☾</button>
+        <a href="#experiences" class="nav-cta">Explore Events ↗</a>
+      </div>
     </nav>
+  </header>
 
-    <div class="nav-actions">
-        <button class="theme-toggle" id="themeToggle" aria-label="Change theme">🌙</button>
-        <a href="#plan" class="nav-cta">Let's Connect ↗</a>
-        <button class="menu-toggle" id="menuToggle" aria-label="Open menu">☰</button>
-    </div>
-</header>
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-shape shape-one"></div>
+      <div class="hero-shape shape-two"></div>
 
-
-<main>
-
-<!-- HERO -->
-<section class="hero" id="home">
-    <div class="hero-content">
-        <span class="eyebrow">CREATE • CONNECT • EXPERIENCE</span>
-
-        <h1>Make your weekend<br>a little more <em>creative.</em></h1>
-
-        <p class="hero-description">
-            Discover hands-on creative experiences, meet new people,
-            celebrate special moments, and make something you'll
-            actually want to take home.
-        </p>
-
-        <div class="hero-buttons">
-            <a href="#experiences" class="primary-btn">Explore Experiences ↗</a>
-            <a href="#plan" class="secondary-btn">Plan an Event</a>
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="eyebrow"><span class="sparkle">✦</span> A LITTLE MORE CREATIVITY, A LOT MORE JOY</div>
+          <h1>Make room for<br><em>little moments</em><br>of magic.</h1>
+          <p class="hero-text">
+            From painting and pottery to beautiful celebrations,
+            discover experiences that bring people together and make
+            ordinary days unforgettable.
+          </p>
+          <div class="hero-actions">
+            <a href="#experiences" class="btn btn-primary">Explore Experiences <span>↗</span></a>
+            <a href="#about" class="btn btn-light">Our Story</a>
+          </div>
+          <div class="hero-note">
+            <span class="note-stars">★★★★★</span>
+            <span>Creativity, connection & happy memories</span>
+          </div>
         </div>
 
-        <div class="hero-note">
-            <span>✦ Create something</span>
-            <span>♡ Make memories</span>
+        <div class="hero-art">
+          <div class="hero-photo photo-main">
+            <img src="https://blissboardofficial.netlify.app/assets/activities/tote-bag-landscape.png" alt="Creative tote bag painting workshop">
+          </div>
+          <div class="hero-photo photo-small">
+            <img src="https://blissboardofficial.netlify.app/assets/activities/pottery-landscape.png" alt="Handmade pottery">
+          </div>
+          <div class="floating-note note-top">create something lovely ✿</div>
+          <div class="floating-note note-bottom">good vibes only ♡</div>
+          <div class="hero-sticker">ART<br>♡<br>JOY</div>
         </div>
-    </div>
+      </div>
 
-    <div class="hero-visual">
-        <div class="hero-image">
-            <img src="https://blissboardofficial.netlify.app/assets/event-1.jpg"
-                 alt="BlissBoard creative experience">
-        </div>
+      <div class="hero-bottom container">
+        <span>PAINT</span><i>✦</i><span>CREATE</span><i>✦</i><span>CONNECT</span><i>✦</i><span>CELEBRATE</span>
+      </div>
+    </section>
 
-        <div class="floating-card floating-one">
-            <span>🎨</span>
-            <div>
-                <strong>Make something</strong>
-                <small>With your own hands</small>
-            </div>
-        </div>
+    <section class="intro-strip">
+      <div class="container intro-inner">
+        <p>Not just workshops.</p>
+        <p><strong>Experiences worth remembering.</strong></p>
+        <span>✿</span>
+      </div>
+    </section>
 
-        <div class="floating-card floating-two">
-            <span>♡</span>
-            <div>
-                <strong>Meet your people</strong>
-                <small>Collect little moments</small>
-            </div>
-        </div>
-
-        <div class="hero-circle">A little<br>more joy ✦</div>
-    </div>
-</section>
-
-
-<!-- ABOUT -->
-<section class="intro-section section-padding" id="about">
-    <div class="section-tag">WELCOME TO BLISSBOARD</div>
-    <h2>There's more to a weekend<br>than <em>scrolling.</em></h2>
-
-    <p class="intro-text">
-        BlissBoard brings people together through creative experiences,
-        activities and events — from painting and pottery to birthdays,
-        celebrations, college gatherings, corporate events and everything
-        in between.
-    </p>
-</section>
-
-
-<!-- EXPERIENCES -->
-<section class="experiences-section section-padding" id="experiences">
-
-    <div class="section-heading">
+    <section class="section container" id="experiences">
+      <div class="section-heading">
         <div>
-            <div class="section-tag">OUR EXPERIENCES</div>
-            <h2>Pick something.<br><em>Make it yours.</em></h2>
+          <div class="eyebrow">FIND YOUR KIND OF FUN</div>
+          <h2>Explore our <em>experiences</em></h2>
+          <p class="section-subtitle">Pick a creative activity, bring your favourite people and let the fun begin.</p>
         </div>
+        <div class="heading-decoration">✳</div>
+      </div>
 
-        <p>
-            From hands-on art to unexpected creative experiences,
-            there's always something new to try.
-        </p>
-    </div>
-
-    <div class="filter-bar">
-        <button class="filter active" data-filter="all">All</button>
-        <button class="filter" data-filter="painting">Painting</button>
-        <button class="filter" data-filter="craft">DIY & Craft</button>
-        <button class="filter" data-filter="art">Creative Art</button>
-        <button class="filter" data-filter="pottery">Pottery</button>
-    </div>
-
-    <div class="experience-tools">
-        <input type="search" id="experienceSearch"
-               placeholder="⌕ Search experiences..."
-               aria-label="Search experiences">
-
-        <select id="sortExperiences" aria-label="Sort experiences">
-            <option value="default">Sort: Default</option>
-            <option value="az">Name: A to Z</option>
-            <option value="za">Name: Z to A</option>
+      <div class="toolbar">
+        <div class="search-box">
+          <span>⌕</span>
+          <input type="search" id="experienceSearch" placeholder="Search an activity...">
+        </div>
+        <select id="sortExperiences" aria-label="Sort activities">
+          <option value="featured">Sort: Featured</option>
+          <option value="low">Price: Low to High</option>
+          <option value="high">Price: High to Low</option>
+          <option value="az">Name: A to Z</option>
         </select>
+        <button class="saved-toggle" id="showSaved">♡ Saved <span id="savedCount">0</span></button>
+      </div>
 
-        <button id="showSaved" class="saved-button">
-            ♡ Saved (<span id="savedCount">0</span>)
-        </button>
-    </div>
+      <div class="filter-row" id="filterRow">
+        <button class="filter active" data-filter="all">All activities</button>
+        <button class="filter" data-filter="painting">Painting</button>
+        <button class="filter" data-filter="resin">Resin art</button>
+        <button class="filter" data-filter="clay">Clay & pottery</button>
+        <button class="filter" data-filter="creative">Creative fun</button>
+      </div>
 
+      <div class="results-line">
+        <span id="resultCount">33 experiences</span>
+        <span>Prices shown in Indian Rupees (₹)</span>
+      </div>
 
-    <div class="experience-grid" id="experienceGrid">
+      <div class="experience-grid" id="experienceGrid"></div>
+      <div class="empty-state" id="noResults" hidden>
+        <span>🌷</span>
+        <h3>No activities found</h3>
+        <p>Try another search or choose a different category.</p>
+        <button class="btn btn-primary" id="resetFilters">Show all activities</button>
+      </div>
+    </section>
 
-        <article class="experience-card" data-category="painting">
-            <div class="card-image">
-                <img src="https://blissboardofficial.netlify.app/assets/activities/tote-bag-landscape.png" alt="Tote Bag Painting poster">
-                <span class="card-number">01</span>
-            </div>
-            <div class="card-content">
-                <span class="card-category">PAINT • CREATE • PERSONALISE</span>
-                <h3>Tote Bag Painting</h3>
-                <p>Create a tote bag as unique as you. Paint, personalise and take home your own design.</p>
-                <button class="details-button" data-title="Tote Bag Painting">Explore Experience ↗</button>
-            </div>
-        </article>
-
-
-        <article class="experience-card" data-category="art">
-            <div class="card-image">
-                <img src="https://blissboardofficial.netlify.app/assets/activities/kintsugi-landscape.png" alt="Japanese Kintsugi poster">
-                <span class="card-number">02</span>
-            </div>
-            <div class="card-content">
-                <span class="card-category">JAPANESE ART • IMPERFECTION • GOLD</span>
-                <h3>Japanese Kintsugi</h3>
-                <p>Discover the Japanese art of embracing imperfections and creating beauty with gold.</p>
-                <button class="details-button" data-title="Japanese Kintsugi">Explore Experience ↗</button>
-            </div>
-        </article>
-
-
-        <article class="experience-card" data-category="craft">
-            <div class="card-image">
-                <img src="https://blissboardofficial.netlify.app/assets/activities/resin-koi-landscape.png" alt="Resin Koi Pond poster">
-                <span class="card-number">03</span>
-            </div>
-            <div class="card-content">
-                <span class="card-category">RESIN • MINIATURE • NATURE</span>
-                <h3>Resin Koi Pond</h3>
-                <p>Create a beautiful miniature pond-inspired artwork with resin and tiny details.</p>
-                <button class="details-button" data-title="Resin Koi Pond">Explore Experience ↗</button>
-            </div>
-        </article>
-
-
-        <article class="experience-card" data-category="craft">
-            <div class="card-image">
-                <img src="https://blissboardofficial.netlify.app/assets/activities/moon-lamp-landscape.png" alt="Moon Lamp poster">
-                <span class="card-number">04</span>
-            </div>
-            <div class="card-content">
-                <span class="card-category">DIY • LIGHT • DECOR</span>
-                <h3>Moon Lamp</h3>
-                <p>Craft your own moon that glows your vibe and brightens up your space.</p>
-                <button class="details-button" data-title="Moon Lamp">Explore Experience ↗</button>
-            </div>
-        </article>
-
-
-        <article class="experience-card" data-category="craft">
-            <div class="card-image">
-                <img src="https://blissboardofficial.netlify.app/assets/activities/miniature-food-landscape.png" alt="Miniature Food Plate poster">
-                <span class="card-number">05</span>
-            </div>
-            <div class="card-content">
-                <span class="card-category">MINIATURE • FOOD • CRAFT</span>
-                <h3>Miniature Food Plate</h3>
-                <p>Make adorable miniature food creations from scratch with tiny details.</p>
-                <button class="details-button" data-title="Miniature Food Plate">Explore Experience ↗</button>
-            </div>
-        </article>
-
-
-        <article class="experience-card" data-category="art">
-            <div class="card-image">
-                <img src="https://blissboardofficial.netlify.app/assets/activities/texture-landscape.png" alt="Texture Art poster">
-                <span class="card-number">06</span>
-            </div>
-            <div class="card-content">
-                <span class="card-category">TEXTURE • ART • EXPRESSION</span>
-                <h3>Texture Art</h3>
-                <p>Go from a blank canvas to a textured masterpiece of your own.</p>
-                <button class="details-button" data-title="Texture Art">Explore Experience ↗</button>
-            </div>
-        </article>
-
-
-        <article class="experience-card" data-category="painting">
-            <div class="card-image">
-                <img src="https://blissboardofficial.netlify.app/assets/activities/tumbler-landscape.png" alt="Tumbler Painting poster">
-                <span class="card-number">07</span>
-            </div>
-            <div class="card-content">
-                <span class="card-category">PAINT • SIP • PERSONALISE</span>
-                <h3>Tumbler Painting</h3>
-                <p>Sip, paint and let your imagination flow with a personalised tumbler.</p>
-                <button class="details-button" data-title="Tumbler Painting">Explore Experience ↗</button>
-            </div>
-        </article>
-
-
-        <article class="experience-card" data-category="pottery">
-            <div class="card-image">
-                <img src="https://blissboardofficial.netlify.app/assets/activities/pottery-landscape.png" alt="Hand-Build Pottery poster">
-                <span class="card-number">08</span>
-            </div>
-            <div class="card-content">
-                <span class="card-category">CLAY • HANDS-ON • CREATE</span>
-                <h3>Hand-Build Pottery</h3>
-                <p>Mold the clay, mold the moment and make something by hand.</p>
-                <button class="details-button" data-title="Hand-Build Pottery">Explore Experience ↗</button>
-            </div>
-        </article>
-
-    </div>
-
-    <p class="no-results" id="noResults">No experiences found. Try another search.</p>
-    <p class="section-bottom-note">And we're just getting started. ✦</p>
-</section>
-
-
-<!-- EVENTS -->
-<section class="events-section section-padding" id="events">
-
-    <div class="section-heading">
+    <section class="price-note">
+      <div class="container price-note-inner">
+        <span class="price-icon">♡</span>
         <div>
-            <div class="section-tag">WHAT'S HAPPENING</div>
-            <h2>Upcoming <em>experiences.</em></h2>
+          <h3>Clear prices, happy plans.</h3>
+          <p>Compare the listed District and BookMyShow prices before you plan your experience. Please confirm the final payable amount on the booking platform.</p>
         </div>
-        <p>Find your next creative break, meet new people and make memories.</p>
-    </div>
+      </div>
+    </section>
 
-    <div class="event-grid">
-
-        <article class="event-card">
-            <div class="event-image">
-                <img src="https://blissboardofficial.netlify.app/assets/event-1.jpg" alt="BlissBoard Resin Koi Pond event">
-                <span class="event-label">CREATIVE EXPERIENCE</span>
-            </div>
-            <div class="event-content">
-                <div class="event-date">SAT <strong>07</strong> NOV 2026</div>
-                <h3>Coaster Painting</h3>
-                <p>Make your own colourful coaster designs in a relaxed creative session.</p>
-                <div class="event-meta">
-                    <span>📍 Delhi</span>
-                    <span>🎨 Painting</span>
-                </div>
-                <button class="event-button" data-event="Coaster Painting" data-date="2026-11-07">
-                    Enquire About Event ↗
-                </button>
-            </div>
-        </article>
-
-
-        <article class="event-card">
-            <div class="event-image">
-                <img src="https://blissboardofficial.netlify.app/assets/event-2.jpg" alt="BlissBoard creative event">
-                <span class="event-label">CREATIVE EXPERIENCE</span>
-            </div>
-            <div class="event-content">
-                <div class="event-date">SAT <strong>14</strong> NOV 2026</div>
-                <h3>Vision Board</h3>
-                <p>Turn your dreams and goals into a personalised visual masterpiece.</p>
-                <div class="event-meta">
-                    <span>📍 Noida</span>
-                    <span>✨ Creative Art</span>
-                </div>
-                <button class="event-button" data-event="Vision Board" data-date="2026-11-14">
-                    Enquire About Event ↗
-                </button>
-            </div>
-        </article>
-
-
-        <article class="event-card">
-            <div class="event-image">
-                <img src="https://blissboardofficial.netlify.app/assets/event-3.jpg" alt="BlissBoard tumbler painting event">
-                <span class="event-label">CREATIVE EXPERIENCE</span>
-            </div>
-            <div class="event-content">
-                <div class="event-date">DATE TO BE ANNOUNCED</div>
-                <h3>Tumbler Painting</h3>
-                <p>Personalise your tumbler with colours, patterns and creative designs.</p>
-                <div class="event-meta">
-                    <span>📍 Delhi NCR</span>
-                    <span>🎨 Painting</span>
-                </div>
-                <button class="event-button" data-event="Tumbler Painting" data-date="">
-                    Ask for Next Date ↗
-                </button>
-            </div>
-        </article>
-
-    </div>
-
-    <p class="event-disclaimer">
-        Calendar dates are demonstration entries and must be confirmed with
-        BlissBoard. Please check availability, venue and charges before booking.
-    </p>
-
-</section>
-
-
-<!-- EVENT CALENDAR -->
-<section class="calendar-section section-padding" id="calendar">
-
-    <div class="section-heading">
-        <div>
-            <div class="section-tag">PLAN YOUR CREATIVE DAYS</div>
-            <h2>BlissBoard <em>calendar.</em></h2>
+    <section class="section calendar-section" id="calendar">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <div class="eyebrow">SAVE THE DATE</div>
+            <h2>Your next happy day is <em>waiting.</em></h2>
+            <p class="section-subtitle">Explore the calendar and enquire about an event date.</p>
+          </div>
+          <div class="heading-decoration">♡</div>
         </div>
-        <p>Explore scheduled experiences, select a date and see what's happening.</p>
-    </div>
 
-    <div class="calendar-layout">
-
-        <div class="calendar-box">
-
+        <div class="calendar-layout">
+          <div class="calendar-card">
             <div class="calendar-top">
-                <button id="prevMonth" aria-label="Previous month">‹</button>
-                <h3 id="monthYear">November 2026</h3>
-                <button id="nextMonth" aria-label="Next month">›</button>
+              <button id="prevMonth" aria-label="Previous month">←</button>
+              <h3 id="monthYear">Month Year</h3>
+              <button id="nextMonth" aria-label="Next month">→</button>
             </div>
-
             <div class="calendar-weekdays">
-                <span>Sun</span>
-                <span>Mon</span>
-                <span>Tue</span>
-                <span>Wed</span>
-                <span>Thu</span>
-                <span>Fri</span>
-                <span>Sat</span>
+              <span>Sun</span><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span>
             </div>
-
             <div class="calendar-days" id="calendarDays"></div>
+            <p class="calendar-legend"><i></i> Enquiry / demo date</p>
+          </div>
 
-            <div class="calendar-legend">
-                <span><i class="legend-dot"></i> Event scheduled</span>
-                <span><i class="today-dot"></i> Today</span>
-            </div>
-
-        </div>
-
-
-        <div class="calendar-details">
-            <span class="section-tag">SELECTED DATE</span>
+          <div class="calendar-details">
+            <div class="eyebrow">YOUR PLANS</div>
             <h3 id="selectedDateTitle">Choose a date</h3>
-
+            <p class="calendar-help">Select a date on the calendar to see its details. Dates shown as demo dates are not confirmed official events.</p>
             <div id="calendarEventList" class="calendar-event-list">
-                <p class="empty-calendar">
-                    Select a date on the calendar to see its events.
-                </p>
+              <div class="calendar-empty">♡<br>Pick a date to get started.</div>
             </div>
+            <a href="#contact" class="btn btn-primary">Plan an event ↗</a>
+          </div>
+        </div>
+      </div>
+    </section>
 
-            <a href="#plan" class="primary-btn calendar-contact">
-                Ask About an Event ↗
-            </a>
+    <section class="section event-section" id="celebrate">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <div class="eyebrow">MORE THAN JUST AN EVENT</div>
+            <h2>Let's make it <em>special.</em></h2>
+            <p class="section-subtitle">From intimate celebrations to big group experiences, we bring your ideas to life.</p>
+          </div>
         </div>
 
-    </div>
-
-</section>
-
-
-<!-- EVENT CATEGORIES -->
-<section class="find-section section-padding">
-    <div class="section-tag">FIND YOUR THING</div>
-    <h2>However you want<br>to <em>experience it.</em></h2>
-
-    <div class="category-grid">
-
-        <div class="category-card">
-            <span>🎨</span>
+        <div class="event-grid">
+          <article class="event-card event-pink">
+            <div class="event-emoji">🎨</div>
+            <span class="event-label">01 / CREATE</span>
             <h3>Creative Workshops</h3>
-            <p>Hands-on activities where you actually make something.</p>
-        </div>
-
-        <div class="category-card">
-            <span>🎂</span>
+            <p>Painting, pottery, resin art and hands-on experiences that let everyone explore their creative side.</p>
+            <a href="#experiences">Explore activities ↗</a>
+          </article>
+          <article class="event-card event-yellow">
+            <div class="event-emoji">🎂</div>
+            <span class="event-label">02 / CELEBRATE</span>
             <h3>Celebrations</h3>
-            <p>Birthdays, special occasions and memorable gatherings.</p>
-        </div>
-
-        <div class="category-card">
-            <span>🎓</span>
+            <p>Birthdays, date plans, anniversaries and thoughtful get-togethers made extra memorable.</p>
+            <a href="#contact">Plan a celebration ↗</a>
+          </article>
+          <article class="event-card event-lilac">
+            <div class="event-emoji">🎓</div>
+            <span class="event-label">03 / CONNECT</span>
             <h3>College & Communities</h3>
-            <p>Bring people together around something fun.</p>
-        </div>
-
-        <div class="category-card">
-            <span>✨</span>
+            <p>Bring your friends, societies and communities together with creative group activities.</p>
+            <a href="#contact">Host a group event ↗</a>
+          </article>
+          <article class="event-card event-green">
+            <div class="event-emoji">✨</div>
+            <span class="event-label">04 / CUSTOMISE</span>
             <h3>Custom Events</h3>
-            <p>Have an idea? We'll help turn it into an experience.</p>
+            <p>Have a different idea? Tell us what you have in mind and let's create something unique.</p>
+            <a href="#contact">Share your idea ↗</a>
+          </article>
         </div>
+      </div>
+    </section>
 
-    </div>
-</section>
-
-
-<!-- QUOTE -->
-<section class="quote-section">
-    <span class="quote-star">✳</span>
-    <p>Come for the activity.<br>Stay for the <em>memories.</em></p>
-    <span class="quote-small">THAT'S THE BLISSBOARD FEELING</span>
-</section>
-
-
-<!-- PLAN AN EVENT -->
-<section class="plan-section section-padding" id="plan">
-
-    <div class="plan-intro">
-        <div class="section-tag">PLAN WITH BLISSBOARD</div>
-        <h2>You bring the occasion.<br><em>We create the experience.</em></h2>
-        <p>
-            Whether you're celebrating a birthday, planning a college event,
-            organising a corporate gathering, hosting a private celebration,
-            or looking for something different — BlissBoard can help bring
-            it to life.
-        </p>
-    </div>
-
-
-    <div class="plan-grid">
-
-        <div class="plan-card">
-            <span>01</span>
-            <h3>Come to our venue</h3>
-            <p>Choose from venues across Delhi NCR and enjoy a creative experience organised by BlissBoard.</p>
-            <small>Birthdays · Dates · Friends · Families · Workshops</small>
+    <section class="section plan-section" id="about">
+      <div class="container plan-grid">
+        <div class="plan-copy">
+          <div class="eyebrow">A LITTLE ABOUT US</div>
+          <h2>Good things happen when we <em>create together.</em></h2>
+          <p>BlissBoard is all about bringing people closer through creativity. We believe you don't need to be an artist to make art, and you don't need a special occasion to make a memory.</p>
+          <p>Come as you are, try something new and leave with a little more joy.</p>
+          <a href="#contact" class="btn btn-primary">Let's plan something <span>↗</span></a>
         </div>
-
-        <div class="plan-card">
-            <span>02</span>
-            <h3>We'll come to you</h3>
-            <p>BlissBoard can bring activities, materials, hosts and the experience to your location.</p>
-            <small>Corporate · College · School · Private Events</small>
+        <div class="plan-options">
+          <div class="plan-option"><span>01</span><div><h3>Come to our venue</h3><p>Join us for a fun, hands-on experience.</p></div><b>↗</b></div>
+          <div class="plan-option"><span>02</span><div><h3>We'll come to you</h3><p>Bring the creative setup to your location.</p></div><b>↗</b></div>
+          <div class="plan-option"><span>03</span><div><h3>Need a venue?</h3><p>Let's explore a suitable space for your event.</p></div><b>↗</b></div>
+          <div class="plan-option"><span>04</span><div><h3>Something different?</h3><p>Tell us your idea. We love new possibilities.</p></div><b>↗</b></div>
         </div>
+      </div>
+    </section>
 
-        <div class="plan-card">
-            <span>03</span>
-            <h3>Need a venue?</h3>
-            <p>Tell us what you're planning and we'll help you find a suitable space.</p>
-            <small>Gatherings · Parties · Workshops</small>
-        </div>
+    <section class="quote-section">
+      <div class="container quote-inner">
+        <span class="quote-mark">“</span>
+        <h2>Life is better when<br>you make a little <em>time for joy.</em></h2>
+        <p>CREATE · CONNECT · CELEBRATE</p>
+        <span class="quote-flower">✿</span>
+      </div>
+    </section>
 
-        <div class="plan-card">
-            <span>04</span>
-            <h3>Something different?</h3>
-            <p>Tell us your idea. We'll work with you to create a special experience.</p>
-            <small>Your idea · Your occasion · Your people</small>
-        </div>
-
-    </div>
-
-
-    <div class="contact-panel">
-
+    <section class="section faq-section">
+      <div class="container faq-layout">
         <div>
-            <span class="section-tag">LET'S MAKE IT HAPPEN</span>
-            <h2>Let's create<br><em>something special.</em></h2>
-            <p>Share your idea with us and let's plan something memorable.</p>
+          <div class="eyebrow">A FEW QUICK ANSWERS</div>
+          <h2>Curious? <em>We've got you.</em></h2>
+          <p class="section-subtitle">A few things you might want to know before booking.</p>
+        </div>
+        <div class="faq-list">
+          <details>
+            <summary>Do I need prior art experience?</summary>
+            <p>Not at all! Our activities are designed to be enjoyable for beginners. Just bring your curiosity and enthusiasm.</p>
+          </details>
+          <details>
+            <summary>How do I book an activity?</summary>
+            <p>Choose an activity, check its listed prices and contact BlissBoard to confirm the date, location and availability. You can also use the relevant booking platform where available.</p>
+          </details>
+          <details>
+            <summary>Can I organise a private event?</summary>
+            <p>Yes! You can enquire about birthdays, college events, group workshops and customised celebrations.</p>
+          </details>
+          <details>
+            <summary>Are District and BookMyShow prices different?</summary>
+            <p>The supplied price list currently shows the same amount for both platforms for each activity. Always check the platform checkout page for the final payable amount.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+      <div class="container contact-grid">
+        <div class="contact-copy">
+          <div class="eyebrow">LET'S MAKE SOMETHING HAPPEN</div>
+          <h2>Your idea.<br>Our <em>creative energy.</em></h2>
+          <p>Tell us what you're planning and we'll help you take the next step.</p>
+          <div class="contact-detail"><span>✉</span><a href="mailto:officialblissboard@gmail.com">officialblissboard@gmail.com</a></div>
+          <div class="contact-detail"><span>☏</span><a href="https://wa.me/918505807276" target="_blank" rel="noopener">+91 85058 07276</a></div>
+          <div class="social-links">
+            <a href="https://www.instagram.com/blissboard_official/" target="_blank" rel="noopener">Instagram ↗</a>
+            <a href="https://in.linkedin.com/company/blissboardofficial" target="_blank" rel="noopener">LinkedIn ↗</a>
+            <a href="https://www.youtube.com/@blissboard_official" target="_blank" rel="noopener">YouTube ↗</a>
+          </div>
         </div>
 
-        <form id="enquiryForm">
-
-            <label for="name">Your Name *</label>
-            <input type="text" id="name" placeholder="Enter your name" required>
-
-            <label for="email">Email Address *</label>
-            <input type="email" id="email" placeholder="you@example.com" required>
-
-            <label for="phone">Phone Number *</label>
-            <input type="tel" id="phone" placeholder="+91 98765 43210" required>
-
-            <label for="eventType">I'm planning *</label>
-            <select id="eventType" required>
-                <option value="">Select an event type</option>
-                <option>Creative Workshop</option>
-                <option>Birthday Celebration</option>
-                <option>College Event</option>
-                <option>Corporate Event</option>
-                <option>Private Gathering</option>
-                <option>Custom Event</option>
-            </select>
-
-            <label for="eventDate">Preferred Date</label>
-            <input type="date" id="eventDate">
-
-            <label for="guests">Expected Guests</label>
-            <input type="number" id="guests" min="1" placeholder="e.g. 25">
-
-            <label for="city">City</label>
-            <input type="text" id="city" placeholder="Delhi / Gurugram / Noida">
-
-            <label for="message">Tell us about your idea</label>
-            <textarea id="message" rows="4" placeholder="Tell us what you have in mind..."></textarea>
-
-            <button type="submit" class="primary-btn form-submit">
-                Send Enquiry ↗
-            </button>
-
-            <p class="form-note">
-                Your email app will open with your enquiry details ready to send.
-            </p>
-
+        <form class="contact-form" id="enquiryForm">
+          <h3>Let's talk ✿</h3>
+          <p>Fill in your details and we'll prepare an enquiry message for you.</p>
+          <label for="name">Your name</label>
+          <input id="name" name="name" type="text" placeholder="What should we call you?" required>
+          <label for="email">Email address</label>
+          <input id="email" name="email" type="email" placeholder="you@example.com" required>
+          <label for="phone">Phone number</label>
+          <input id="phone" name="phone" type="tel" placeholder="Your contact number">
+          <div class="form-row">
+            <div>
+              <label for="eventType">Interested in</label>
+              <select id="eventType" name="eventType">
+                <option>Creative workshop</option>
+                <option>Birthday / celebration</option>
+                <option>College / group event</option>
+                <option>Custom event</option>
+              </select>
+            </div>
+            <div>
+              <label for="guests">Number of guests</label>
+              <input id="guests" name="guests" type="number" min="1" placeholder="e.g. 10">
+            </div>
+          </div>
+          <label for="eventDate">Preferred date</label>
+          <input id="eventDate" name="eventDate" type="date">
+          <label for="message">Tell us a little more</label>
+          <textarea id="message" name="message" rows="3" placeholder="Your activity, city or special idea..."></textarea>
+          <button type="submit" class="btn btn-primary form-submit">Send enquiry ↗</button>
+          <small>Your email app will open with your enquiry. This form does not store submissions on a server.</small>
         </form>
+      </div>
+    </section>
+  </main>
 
+  <footer class="footer">
+    <div class="container footer-inner">
+      <a href="#home" class="logo">bliss<span>board</span><i>✿</i></a>
+      <p>Made with ♡ for people who love creating memories.</p>
+      <span>© <span id="year"></span> BlissBoard. All rights reserved.</span>
     </div>
-</section>
+  </footer>
 
+  <button id="backTop" class="back-top" aria-label="Back to top">↑</button>
+  <div class="scroll-progress" id="scrollProgress"></div>
 
-<!-- FINAL CTA -->
-<section class="final-cta">
-    <div class="section-tag">YOUR NEXT EXPERIENCE</div>
-    <h2>Do something<br>you'll <em>remember.</em></h2>
-    <a href="#experiences" class="primary-btn">Explore BlissBoard ↗</a>
-</section>
-
-</main>
-
-
-<!-- EXPERIENCE MODAL -->
-<div class="modal" id="experienceModal">
-    <div class="modal-content">
-        <button class="modal-close" id="closeExperienceModal">×</button>
-        <span class="section-tag">EXPLORE BLISSBOARD</span>
-        <h2 id="modalTitle">Experience</h2>
-        <p id="modalDescription"></p>
-        <p class="modal-note">
-            Contact BlissBoard for current dates, availability, venue and pricing.
-        </p>
-        <a href="#plan" class="primary-btn" id="modalEnquiryLink">Enquire Now ↗</a>
+  <div class="modal" id="activityModal" aria-hidden="true">
+    <div class="modal-backdrop" id="modalBackdrop"></div>
+    <div class="modal-panel">
+      <button class="modal-close" id="closeModal" aria-label="Close">×</button>
+      <div id="modalContent"></div>
     </div>
-</div>
+  </div>
 
-
-<!-- FOOTER -->
-<footer class="footer">
-
-    <div class="footer-main">
-
-        <div class="footer-brand">
-            <a href="#home" class="logo footer-logo">
-                <span class="logo-icon">B</span>
-                <span>blissboard<span class="logo-dot">.</span></span>
-            </a>
-
-            <p>Creative experiences<br>for curious people.</p>
-
-            <a href="mailto:officialblissboard@gmail.com">
-                officialblissboard@gmail.com
-            </a>
-
-            <a href="https://wa.me/918505807276" target="_blank" rel="noopener">
-                WhatsApp · +91 85058 07276
-            </a>
-        </div>
-
-
-        <div class="footer-column">
-            <h4>Explore</h4>
-            <a href="#experiences">Experiences</a>
-            <a href="#events">Events</a>
-            <a href="#calendar">Calendar</a>
-            <a href="#about">About</a>
-            <a href="#plan">Plan an Event</a>
-        </div>
-
-
-        <div class="footer-column">
-            <h4>Follow Along</h4>
-
-            <a href="https://www.instagram.com/blissboard_official/" target="_blank" rel="noopener">
-                Instagram ↗
-            </a>
-
-            <a href="https://in.linkedin.com/company/blissboardofficial" target="_blank" rel="noopener">
-                LinkedIn ↗
-            </a>
-
-            <a href="https://www.youtube.com/@blissboard_official" target="_blank" rel="noopener">
-                YouTube ↗
-            </a>
-        </div>
-
-    </div>
-
-
-    <div class="footer-bottom">
-        <span>© <span id="year"></span> BlissBoard. All rights reserved.</span>
-        <span>Made for creative experiences. ✦</span>
-    </div>
-
-</footer>
-
-
-<button class="back-top" id="backTop" aria-label="Back to top">↑</button>
-
-<script src="script.js"></script>
-
+  <script src="script.js"></script>
 </body>
 </html>
