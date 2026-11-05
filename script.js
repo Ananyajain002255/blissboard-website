@@ -1,440 +1,873 @@
 
-// =====================================
-// BLISSBOARD WEBSITE - MAIN JAVASCRIPT
-// =====================================
+// ========================================
+// BLISSBOARD WEBSITE
+// ========================================
 
-// 1. ALL ACTIVITIES AND PRICES
-// District price = first price column
-// BookMyShow price = second price column
 
-const activities = [
-  ["Acrylic Affair – Canvas Painting",699,699,"painting","https://blissboardofficial.netlify.app/assets/activities/texture-landscape.png","Paint your own canvas and take home a colourful creation."],
-  ["Resin Jewellery",899,899,"resin","https://blissboardofficial.netlify.app/assets/activities/resin-koi-landscape.png","Create beautiful personalised resin jewellery."],
-  ["Texture Art",799,799,"painting","https://blissboardofficial.netlify.app/assets/activities/texture-landscape.png","Explore textures, patterns and artistic details."],
-  ["Dot Mandala Art",799,799,"painting","https://blissboardofficial.netlify.app/assets/activities/tote-bag-landscape.png","Create calming mandala patterns with colourful dots."],
-  ["Lippan Art",799,799,"painting","https://blissboardofficial.netlify.app/assets/activities/tote-bag-landscape.png","Try traditional mirror art with a creative touch."],
-  ["Japanese Kintsugi",799,799,"creative","https://blissboardofficial.netlify.app/assets/activities/kintsugi-landscape.png","Discover the Japanese art of celebrating imperfections."],
-  ["Tumbler Painting",799,799,"painting","https://blissboardofficial.netlify.app/assets/activities/tumbler-landscape.png","Decorate your tumbler with your own designs."],
-  ["Resin Beach Art",799,799,"resin","https://blissboardofficial.netlify.app/assets/activities/resin-koi-landscape.png","Bring ocean-inspired waves into your artwork."],
-  ["Resin Koi Pond",799,799,"resin","https://blissboardofficial.netlify.app/assets/activities/resin-koi-landscape.png","Create a miniature pond-inspired resin artwork."],
-  ["Resin Lotus Pond",799,799,"resin","https://blissboardofficial.netlify.app/assets/activities/resin-koi-landscape.png","Make a beautiful lotus pond-inspired artwork."],
-  ["Pottery",499,499,"clay","https://blissboardofficial.netlify.app/assets/activities/pottery-landscape.png","Get hands-on with clay and shape something of your own."],
-  ["Clay Therapy",799,799,"clay","https://blissboardofficial.netlify.app/assets/activities/pottery-landscape.png","Relax and enjoy a playful clay session."],
-  ["Coffee Painting",799,799,"painting","https://blissboardofficial.netlify.app/assets/activities/texture-landscape.png","Create warm-toned art using coffee as your medium."],
-  ["Pichwai Painting",699,699,"painting","https://blissboardofficial.netlify.app/assets/activities/tote-bag-landscape.png","Explore the beauty of traditional Pichwai art."],
-  ["Madhubani Painting",699,699,"painting","https://blissboardofficial.netlify.app/assets/activities/tote-bag-landscape.png","Try colourful folk-art patterns inspired by Madhubani."],
-  ["Clay Flower Bouquet",799,799,"clay","https://blissboardofficial.netlify.app/assets/activities/pottery-landscape.png","Craft charming flowers from clay."],
-  ["Knife Painting",799,799,"painting","https://blissboardofficial.netlify.app/assets/activities/texture-landscape.png","Experiment with palette-knife strokes and textures."],
-  ["Clay Mug Painting",699,699,"clay","https://blissboardofficial.netlify.app/assets/activities/pottery-landscape.png","Personalise a mug with your favourite designs."],
-  ["Moon Lamp",899,899,"creative","https://blissboardofficial.netlify.app/assets/activities/moon-lamp-landscape.png","Create a dreamy moon-inspired lamp for your room."],
-  ["Trinket Tray",799,799,"resin","https://blissboardofficial.netlify.app/assets/activities/resin-koi-landscape.png","Design a decorative tray for your little treasures."],
-  ["Miniature Food Plate",699,699,"creative","https://blissboardofficial.netlify.app/assets/activities/miniature-food-landscape.png","Make adorable miniature food art on a tiny plate."],
-  ["Clay Date – Couple Pass",899,899,"clay","https://blissboardofficial.netlify.app/assets/activities/pottery-landscape.png","Enjoy a creative clay date together."],
-  ["Clay Ganpati",699,699,"clay","https://blissboardofficial.netlify.app/assets/activities/pottery-landscape.png","Shape a beautiful Ganpati idol with your hands."],
-  ["Rage Therapy",799,799,"creative","https://blissboardofficial.netlify.app/assets/activities/texture-landscape.png","Enjoy an energetic and creative experience."],
-  ["Mandala Coaster Painting",699,699,"painting","https://blissboardofficial.netlify.app/assets/activities/tote-bag-landscape.png","Paint detailed mandala patterns on your coasters."],
-  ["Playdate with Parents",899,899,"creative","https://blissboardofficial.netlify.app/assets/activities/miniature-food-landscape.png","Spend quality time with your parents through creativity."],
-  ["Clay Sculpting",699,699,"clay","https://blissboardofficial.netlify.app/assets/activities/pottery-landscape.png","Turn a simple piece of clay into a sculpture."],
-  ["Painting Using Clay",699,699,"clay","https://blissboardofficial.netlify.app/assets/activities/texture-landscape.png","Explore a different way to create art using clay."],
-  ["Resin Geode Art",799,799,"resin","https://blissboardofficial.netlify.app/assets/activities/resin-koi-landscape.png","Create a sparkling geode-inspired artwork."],
-  ["Boho Texture Art",799,799,"painting","https://blissboardofficial.netlify.app/assets/activities/texture-landscape.png","Make a textured artwork inspired by bohemian decor."],
-  ["Bedazzle Your Canvas",899,899,"creative","https://blissboardofficial.netlify.app/assets/activities/tote-bag-landscape.png","Add sparkle, gems and personality to your canvas."],
-  ["Finger Painting",699,699,"painting","https://blissboardofficial.netlify.app/assets/activities/tote-bag-landscape.png","Get playful with colours and finger painting."],
-  ["Pottery for Kids",699,699,"clay","https://blissboardofficial.netlify.app/assets/activities/pottery-landscape.png","A fun pottery experience for young creators."],
-  ["Vision Board",899,899,"creative","https://blissboardofficial.netlify.app/assets/activities/miniature-food-landscape.png","Visualise your goals and create an inspiring board."]
-];
+// MOBILE NAVIGATION
 
-// 2. PAST EVENT PHOTOS FROM BLISSBOARD WEBSITE
-const pastEvents = [
-  {
-    title: "Resin Koi Pond Gathering",
-    type: "CREATIVE EXPERIENCE",
-    image: "https://blissboardofficial.netlify.app/assets/event-1.jpg",
-    description: "A lovely creative gathering filled with miniature koi pond art and happy memories."
-  },
-  {
-    title: "Creative Flower Workshop",
-    type: "WORKSHOP MOMENTS",
-    image: "https://blissboardofficial.netlify.app/assets/event-2.jpg",
-    description: "Friends coming together to create colourful handmade pieces."
-  },
-  {
-    title: "Tumbler Painting Moments",
-    type: "CREATIVE EXPERIENCE",
-    image: "https://blissboardofficial.netlify.app/assets/event-3.jpg",
-    description: "A fun day of personalising tumblers and making memories."
-  }
-];
-
-// 3. HELPER FUNCTION
-function escapeHTML(value) {
-  return String(value).replace(/[&<>"']/g, char => ({
-    "&": "&amp;",
-    "<": "&lt;",
-    ">": "&gt;",
-    '"': "&quot;",
-    "'": "&#039;"
-  })[char]);
-}
-
-function whatsappLink(activity) {
-  const message =
-    `Hi BlissBoard! I am interested in ${activity[0]}. ` +
-    `District price: ₹${activity[1]}. ` +
-    `BookMyShow price: ₹${activity[2]}. ` +
-    `Please share the available dates, venue and booking details.`;
-
-  return "https://wa.me/918505807276?text=" + encodeURIComponent(message);
-}
-
-// 4. EXPERIENCE CARDS
-const experienceGrid = document.getElementById("experienceGrid");
-const searchInput = document.getElementById("experienceSearch");
-const sortSelect = document.getElementById("sortExperiences");
-const resultCount = document.getElementById("resultCount");
-const noResults = document.getElementById("noResults");
-
-let activeFilter = "all";
-let savedActivities = [];
-
-try {
-  savedActivities = JSON.parse(localStorage.getItem("blissboardSaved") || "[]");
-  if (!Array.isArray(savedActivities)) savedActivities = [];
-} catch {
-  savedActivities = [];
-}
-
-function renderActivities() {
-  let list = activities.map((activity, index) => ({
-    activity,
-    index
-  }));
-
-  if (activeFilter !== "all") {
-    list = list.filter(item => item.activity[3] === activeFilter);
-  }
-
-  const search = searchInput.value.trim().toLowerCase();
-
-  if (search) {
-    list = list.filter(item =>
-      item.activity[0].toLowerCase().includes(search) ||
-      item.activity[5].toLowerCase().includes(search)
-    );
-  }
-
-  if (sortSelect.value === "low") {
-    list.sort((a, b) => a.activity[1] - b.activity[1]);
-  }
-
-  if (sortSelect.value === "high") {
-    list.sort((a, b) => b.activity[1] - a.activity[1]);
-  }
-
-  if (sortSelect.value === "az") {
-    list.sort((a, b) => a.activity[0].localeCompare(b.activity[0]));
-  }
-
-  resultCount.textContent =
-    `${list.length} experiences available`;
-
-  noResults.hidden = list.length > 0;
-
-  experienceGrid.innerHTML = list.map(({ activity, index }) => {
-    const isSaved = savedActivities.includes(index);
-
-    return `
-      <article class="experience-card">
-        <div class="card-image">
-          <img
-            src="${activity[4]}"
-            alt="${escapeHTML(activity[0])}"
-            loading="lazy"
-            onerror="this.onerror=null;this.src='https://blissboardofficial.netlify.app/assets/activities/tote-bag-landscape.png';"
-          >
-          <span class="card-tag">${escapeHTML(activity[3])}</span>
-          <button
-            class="save-btn ${isSaved ? "saved" : ""}"
-            data-save="${index}"
-            aria-label="Save activity"
-            type="button"
-          >${isSaved ? "♥" : "♡"}</button>
-        </div>
-
-        <div class="card-content">
-          <h3>${escapeHTML(activity[0])}</h3>
-          <p class="card-description">${escapeHTML(activity[5])}</p>
-
-          <div class="price-boxes">
-            <div class="price-box">
-              <span>District Price</span>
-              <strong>₹${activity[1]}</strong>
-            </div>
-            <div class="price-box">
-              <span>BookMyShow Price</span>
-              <strong>₹${activity[2]}</strong>
-            </div>
-          </div>
-
-          <div class="card-actions">
-            <button class="details-btn" data-details="${index}" type="button">
-              Details
-            </button>
-            <a class="book-btn"
-               href="${whatsappLink(activity)}"
-               target="_blank"
-               rel="noopener">
-              Enquire / Book ↗
-            </a>
-          </div>
-        </div>
-      </article>
-    `;
-  }).join("");
-}
-
-// 5. SEARCH AND SORT
-searchInput.addEventListener("input", renderActivities);
-sortSelect.addEventListener("change", renderActivities);
-
-// 6. FILTER BUTTONS
-document.querySelectorAll(".filter").forEach(button => {
-  button.addEventListener("click", () => {
-    document.querySelectorAll(".filter").forEach(btn => {
-      btn.classList.remove("active");
-    });
-
-    button.classList.add("active");
-    activeFilter = button.dataset.filter;
-    renderActivities();
-  });
-});
-
-// 7. SAVE FAVOURITES
-experienceGrid.addEventListener("click", event => {
-  const saveButton = event.target.closest("[data-save]");
-  const detailsButton = event.target.closest("[data-details]");
-
-  if (saveButton) {
-    const index = Number(saveButton.dataset.save);
-
-    if (savedActivities.includes(index)) {
-      savedActivities = savedActivities.filter(item => item !== index);
-      showToast("Removed from favourites");
-    } else {
-      savedActivities.push(index);
-      showToast("Added to favourites ♥");
-    }
-
-    localStorage.setItem(
-      "blissboardSaved",
-      JSON.stringify(savedActivities)
-    );
-
-    renderActivities();
-  }
-
-  if (detailsButton) {
-    showActivityDetails(Number(detailsButton.dataset.details));
-  }
-});
-
-// 8. ACTIVITY DETAILS
-function showActivityDetails(index) {
-  const activity = activities[index];
-
-  const message =
-    `Hi BlissBoard! Please share more details about ${activity[0]}.`;
-
-  const link =
-    "https://wa.me/918505807276?text=" + encodeURIComponent(message);
-
-  const oldModal = document.querySelector(".activity-modal");
-  if (oldModal) oldModal.remove();
-
-  const modal = document.createElement("div");
-  modal.className = "activity-modal";
-
-  modal.innerHTML = `
-    <div class="activity-modal-backdrop"></div>
-    <div class="activity-modal-content">
-      <button class="activity-modal-close" type="button">×</button>
-      <p class="eyebrow">DISCOVER YOUR NEXT EXPERIENCE</p>
-      <h2>${escapeHTML(activity[0])}</h2>
-      <p>${escapeHTML(activity[5])}</p>
-      <div class="price-boxes">
-        <div class="price-box">
-          <span>District Price</span>
-          <strong>₹${activity[1]}</strong>
-        </div>
-        <div class="price-box">
-          <span>BookMyShow Price</span>
-          <strong>₹${activity[2]}</strong>
-        </div>
-      </div>
-      <a class="btn btn-primary" href="${link}" target="_blank" rel="noopener">
-        Enquire on WhatsApp ↗
-      </a>
-    </div>
-  `;
-
-  document.body.appendChild(modal);
-
-  function closeModal() {
-    modal.remove();
-    document.removeEventListener("keydown", escapeClose);
-  }
-
-  function escapeClose(event) {
-    if (event.key === "Escape") closeModal();
-  }
-
-  modal.querySelector(".activity-modal-close").addEventListener("click", closeModal);
-  modal.querySelector(".activity-modal-backdrop").addEventListener("click", closeModal);
-  document.addEventListener("keydown", escapeClose);
-}
-
-// 9. PAST EVENTS GALLERY
-const eventGrid = document.getElementById("eventGrid");
-
-eventGrid.innerHTML = pastEvents.map(event => `
-  <article class="event-card">
-    <img
-      src="${event.image}"
-      alt="${escapeHTML(event.title)}"
-      loading="lazy"
-    >
-    <div class="event-caption">
-      <span>${escapeHTML(event.type)}</span>
-      <h3>${escapeHTML(event.title)}</h3>
-      <p>${escapeHTML(event.description)}</p>
-    </div>
-  </article>
-`).join("");
-
-// 10. DARK / LIGHT MODE
-const themeToggle = document.getElementById("themeToggle");
-
-function setTheme(theme) {
-  const isDark = theme === "dark";
-
-  document.body.classList.toggle("dark", isDark);
-  themeToggle.textContent = isDark ? "☀" : "☾";
-  themeToggle.setAttribute(
-    "aria-label",
-    isDark ? "Switch to light mode" : "Switch to dark mode"
-  );
-
-  document.querySelector('meta[name="theme-color"]')
-    .setAttribute("content", isDark ? "#211d24" : "#fff8f4");
-
-  try {
-    localStorage.setItem("blissboardTheme", theme);
-  } catch (error) {
-    console.warn("Theme preference could not be saved.", error);
-  }
-}
-
-let savedTheme = "light";
-
-try {
-  savedTheme = localStorage.getItem("blissboardTheme") || "light";
-} catch (error) {
-  savedTheme = "light";
-}
-
-setTheme(savedTheme);
-
-themeToggle.addEventListener("click", () => {
-  const currentlyDark = document.body.classList.contains("dark");
-  setTheme(currentlyDark ? "light" : "dark");
-});
-
-// 11. MOBILE MENU
 const menuToggle = document.getElementById("menuToggle");
 const navLinks = document.getElementById("navLinks");
 
-menuToggle.addEventListener("click", () => {
-  navLinks.classList.toggle("open");
-  menuToggle.textContent =
-    navLinks.classList.contains("open") ? "×" : "☰";
+menuToggle.addEventListener("click", function () {
+    navLinks.classList.toggle("open");
+    menuToggle.innerText =
+        navLinks.classList.contains("open") ? "×" : "☰";
 });
 
-navLinks.querySelectorAll("a").forEach(link => {
-  link.addEventListener("click", () => {
-    navLinks.classList.remove("open");
-    menuToggle.textContent = "☰";
-  });
+document.querySelectorAll(".nav-links a").forEach(function (link) {
+    link.addEventListener("click", function () {
+        navLinks.classList.remove("open");
+        menuToggle.innerText = "☰";
+    });
 });
 
-// 12. CONTACT FORM
-document.getElementById("enquiryForm").addEventListener("submit", event => {
-  event.preventDefault();
 
-  const name = document.getElementById("name").value.trim();
-  const email = document.getElementById("email").value.trim();
-  const phone = document.getElementById("phone").value.trim();
-  const type = document.getElementById("eventType").value;
-  const guests = document.getElementById("guests").value;
-  const city = document.getElementById("city").value.trim();
-  const message = document.getElementById("message").value.trim();
+// ========================================
+// EXPERIENCE SEARCH, FILTER AND SORT
+// ========================================
 
-  const subject = encodeURIComponent("BlissBoard Event Enquiry");
+const filterButtons = document.querySelectorAll(".filter");
+const cards = Array.from(document.querySelectorAll(".experience-card"));
 
-  const body = encodeURIComponent(
-    `Hello BlissBoard,
+const searchInput = document.getElementById("experienceSearch");
+const sortSelect = document.getElementById("sortExperiences");
+const showSavedButton = document.getElementById("showSaved");
+const savedCount = document.getElementById("savedCount");
+const noResults = document.getElementById("noResults");
 
-I would like to enquire about an event.
+let currentFilter = "all";
+let showOnlySaved = false;
 
-Name: ${name}
-Email: ${email}
-Phone: ${phone || "Not provided"}
-Interested in: ${type}
-Expected guests: ${guests || "Not provided"}
-City: ${city || "Not provided"}
 
-Message:
-${message || "No additional message"}
+// LOAD SAVED EXPERIENCES
 
-Thank you!`
-  );
+let savedExperiences = [];
 
-  window.location.href =
-    `mailto:officialblissboard@gmail.com?subject=${subject}&body=${body}`;
-});
+try {
+    savedExperiences = JSON.parse(
+        localStorage.getItem("blissboardSaved") || "[]"
+    );
 
-// 13. BACK TO TOP
-const backTop = document.getElementById("backTop");
-
-window.addEventListener("scroll", () => {
-  backTop.classList.toggle("visible", window.scrollY > 400);
-});
-
-backTop.addEventListener("click", () => {
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth"
-  });
-});
-
-// 14. TOAST MESSAGE
-let toastTimer;
-
-function showToast(message) {
-  const toast = document.getElementById("toast");
-  toast.textContent = message;
-  toast.classList.add("show");
-
-  clearTimeout(toastTimer);
-
-  toastTimer = setTimeout(() => {
-    toast.classList.remove("show");
-  }, 2200);
+    if (!Array.isArray(savedExperiences)) {
+        savedExperiences = [];
+    }
+} catch (error) {
+    savedExperiences = [];
 }
 
-// 15. FOOTER YEAR
-document.getElementById("year").textContent =
-  new Date().getFullYear();
 
-// 16. INITIAL LOAD
-renderActivities();
+// UPDATE SAVED COUNT
+
+function updateSavedCount() {
+    savedCount.innerText = savedExperiences.length;
+}
+
+
+// ADD SAVE BUTTON TO EACH CARD
+
+cards.forEach(function (card) {
+
+    const title = card.querySelector("h3").innerText;
+
+    const saveButton = document.createElement("button");
+
+    saveButton.className = "save-experience";
+    saveButton.type = "button";
+
+    card.appendChild(saveButton);
+
+    function updateSaveButton() {
+
+        if (savedExperiences.includes(title)) {
+            saveButton.classList.add("saved");
+            saveButton.innerText = "♥ Saved";
+        } else {
+            saveButton.classList.remove("saved");
+            saveButton.innerText = "♡ Save Experience";
+        }
+    }
+
+    updateSaveButton();
+
+    saveButton.addEventListener("click", function () {
+
+        if (savedExperiences.includes(title)) {
+
+            savedExperiences = savedExperiences.filter(
+                function (item) {
+                    return item !== title;
+                }
+            );
+
+        } else {
+
+            savedExperiences.push(title);
+
+        }
+
+        try {
+            localStorage.setItem(
+                "blissboardSaved",
+                JSON.stringify(savedExperiences)
+            );
+        } catch (error) {
+            console.log("Could not save wishlist.");
+        }
+
+        updateSaveButton();
+        updateSavedCount();
+        updateCards();
+
+    });
+
+});
+
+
+// UPDATE EXPERIENCE CARDS
+
+function updateCards() {
+
+    const searchText = searchInput.value.toLowerCase().trim();
+
+    let visibleCount = 0;
+
+    cards.forEach(function (card) {
+
+        const title = card.querySelector("h3").innerText.toLowerCase();
+
+        const description =
+            card.querySelector("p").innerText.toLowerCase();
+
+        const category = card.dataset.category;
+
+        const categoryMatch =
+            currentFilter === "all" ||
+            category === currentFilter;
+
+        const searchMatch =
+            title.includes(searchText) ||
+            description.includes(searchText);
+
+        const isSaved = savedExperiences.includes(
+            card.querySelector("h3").innerText
+        );
+
+        const savedMatch = !showOnlySaved || isSaved;
+
+        const shouldShow =
+            categoryMatch && searchMatch && savedMatch;
+
+        card.classList.toggle("hidden", !shouldShow);
+
+        if (shouldShow) {
+            visibleCount++;
+        }
+
+    });
+
+    noResults.classList.toggle("visible", visibleCount === 0);
+}
+
+
+// CATEGORY FILTERS
+
+filterButtons.forEach(function (button) {
+
+    button.addEventListener("click", function () {
+
+        filterButtons.forEach(function (item) {
+            item.classList.remove("active");
+        });
+
+        button.classList.add("active");
+
+        currentFilter = button.dataset.filter;
+        showOnlySaved = false;
+
+        showSavedButton.classList.remove("active");
+
+        updateCards();
+
+    });
+
+});
+
+
+// SEARCH
+
+searchInput.addEventListener("input", updateCards);
+
+
+// SHOW SAVED
+
+showSavedButton.addEventListener("click", function () {
+
+    showOnlySaved = !showOnlySaved;
+
+    showSavedButton.classList.toggle("active");
+
+    filterButtons.forEach(function (button) {
+        button.classList.remove("active");
+    });
+
+    document.querySelector('[data-filter="all"]')
+        .classList.add("active");
+
+    currentFilter = "all";
+
+    updateCards();
+
+});
+
+
+// SORT
+
+sortSelect.addEventListener("change", function () {
+
+    const grid = document.getElementById("experienceGrid");
+
+    let sortedCards = [...cards];
+
+    if (sortSelect.value === "az") {
+        sortedCards.sort(function (a, b) {
+            return a.querySelector("h3").innerText.localeCompare(
+                b.querySelector("h3").innerText
+            );
+        });
+    }
+
+    if (sortSelect.value === "za") {
+        sortedCards.sort(function (a, b) {
+            return b.querySelector("h3").innerText.localeCompare(
+                a.querySelector("h3").innerText
+            );
+        });
+    }
+
+    if (sortSelect.value === "default") {
+        sortedCards = [...cards];
+    }
+
+    sortedCards.forEach(function (card) {
+        grid.appendChild(card);
+    });
+
+    updateCards();
+
+});
+
+updateSavedCount();
+updateCards();
+
+
+// ========================================
+// EXPERIENCE DETAILS MODAL
+// ========================================
+
+const experienceModal =
+    document.getElementById("experienceModal");
+
+const modalTitle = document.getElementById("modalTitle");
+
+const modalDescription =
+    document.getElementById("modalDescription");
+
+const closeExperienceModal =
+    document.getElementById("closeExperienceModal");
+
+
+const experienceDescriptions = {
+
+    "Tote Bag Painting":
+        "Create a tote as unique as you. Explore colours, patterns and personal designs and take home your own creation.",
+
+    "Japanese Kintsugi":
+        "Discover the Japanese art of Kintsugi. Embrace imperfections and learn how broken pieces can be transformed into something beautiful.",
+
+    "Resin Koi Pond":
+        "Create a miniature pond-inspired artwork using resin, tiny details and creative techniques.",
+
+    "Moon Lamp":
+        "Craft your own moon-inspired lamp and create a beautiful decorative piece for your room.",
+
+    "Miniature Food Plate":
+        "Make adorable miniature food creations from scratch with tiny details and lots of imagination.",
+
+    "Texture Art":
+        "Experiment with layers, textures, shapes and colours to create a unique textured masterpiece.",
+
+    "Tumbler Painting":
+        "Sip, paint and let your imagination flow. Personalise a tumbler with your own colours and designs.",
+
+    "Hand-Build Pottery":
+        "Get hands-on with clay and explore hand-building techniques to make your own pottery piece."
+
+};
+
+
+// OPEN MODAL
+
+document.querySelectorAll(".details-button").forEach(function (button) {
+
+    button.addEventListener("click", function () {
+
+        const title = button.dataset.title;
+
+        modalTitle.innerText = title;
+
+        modalDescription.innerText =
+            experienceDescriptions[title] ||
+            "Contact BlissBoard to know more about this experience.";
+
+        experienceModal.classList.add("show");
+
+        document.body.style.overflow = "hidden";
+
+    });
+
+});
+
+
+// CLOSE MODAL
+
+function closeModal() {
+    experienceModal.classList.remove("show");
+    document.body.style.overflow = "";
+}
+
+closeExperienceModal.addEventListener("click", closeModal);
+
+experienceModal.addEventListener("click", function (event) {
+    if (event.target === experienceModal) {
+        closeModal();
+    }
+});
+
+document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape") {
+        closeModal();
+    }
+});
+
+document.getElementById("modalEnquiryLink")
+    .addEventListener("click", closeModal);
+
+
+// ========================================
+// EVENT CALENDAR DATA
+// ========================================
+
+// These are demonstration entries.
+// Confirm actual dates with the BlissBoard team.
+
+const events = [
+
+    {
+        title: "Coaster Painting",
+        date: "2026-11-07",
+        time: "Time to be confirmed",
+        location: "Delhi",
+        description: "A creative coaster painting experience."
+    },
+
+    {
+        title: "Vision Board",
+        date: "2026-11-14",
+        time: "Time to be confirmed",
+        location: "Noida",
+        description: "Create a visual board of your dreams and goals."
+    }
+
+];
+
+
+// CALENDAR ELEMENTS
+
+const calendarDays = document.getElementById("calendarDays");
+
+const monthYear = document.getElementById("monthYear");
+
+const selectedDateTitle =
+    document.getElementById("selectedDateTitle");
+
+const calendarEventList =
+    document.getElementById("calendarEventList");
+
+const prevMonth = document.getElementById("prevMonth");
+
+const nextMonth = document.getElementById("nextMonth");
+
+
+let calendarDate = new Date(2026, 10, 1);
+
+let selectedDate = null;
+
+
+// DATE FORMAT
+
+function makeDateKey(year, month, day) {
+
+    const mm = String(month + 1).padStart(2, "0");
+
+    const dd = String(day).padStart(2, "0");
+
+    return year + "-" + mm + "-" + dd;
+
+}
+
+
+// DISPLAY MONTH CALENDAR
+
+function renderCalendar() {
+
+    const year = calendarDate.getFullYear();
+
+    const month = calendarDate.getMonth();
+
+    const firstDay = new Date(year, month, 1).getDay();
+
+    const totalDays = new Date(year, month + 1, 0).getDate();
+
+    const today = new Date();
+
+    monthYear.innerText = calendarDate.toLocaleDateString(
+        "en-IN",
+        {
+            month: "long",
+            year: "numeric"
+        }
+    );
+
+    calendarDays.innerHTML = "";
+
+
+    // EMPTY SPACES BEFORE FIRST DATE
+
+    for (let i = 0; i < firstDay; i++) {
+
+        const empty = document.createElement("div");
+
+        empty.className = "calendar-day empty";
+
+        calendarDays.appendChild(empty);
+
+    }
+
+
+    // CREATE DATE BUTTONS
+
+    for (let day = 1; day <= totalDays; day++) {
+
+        const dateKey = makeDateKey(year, month, day);
+
+        const button = document.createElement("button");
+
+        button.className = "calendar-day";
+
+        button.innerText = day;
+
+
+        const isToday =
+            today.getFullYear() === year &&
+            today.getMonth() === month &&
+            today.getDate() === day;
+
+        if (isToday) {
+            button.classList.add("today");
+        }
+
+
+        const hasEvent = events.some(function (event) {
+            return event.date === dateKey;
+        });
+
+        if (hasEvent) {
+            button.classList.add("has-event");
+        }
+
+
+        if (selectedDate === dateKey) {
+            button.classList.add("selected");
+        }
+
+
+        button.addEventListener("click", function () {
+
+            selectedDate = dateKey;
+
+            renderCalendar();
+
+            showDateEvents(dateKey);
+
+        });
+
+
+        calendarDays.appendChild(button);
+
+    }
+
+}
+
+
+// SHOW EVENTS FOR SELECTED DATE
+
+function showDateEvents(dateKey) {
+
+    const dateObject = new Date(dateKey + "T12:00:00");
+
+    selectedDateTitle.innerText =
+        dateObject.toLocaleDateString(
+            "en-IN",
+            {
+                weekday: "long",
+                day: "numeric",
+                month: "long",
+                year: "numeric"
+            }
+        );
+
+    calendarEventList.innerHTML = "";
+
+
+    const matchingEvents = events.filter(function (event) {
+        return event.date === dateKey;
+    });
+
+
+    if (matchingEvents.length === 0) {
+
+        calendarEventList.innerHTML =
+            '<p class="empty-calendar">No event is currently listed for this date. Contact BlissBoard to ask about availability.</p>';
+
+        return;
+
+    }
+
+
+    matchingEvents.forEach(function (event) {
+
+        const card = document.createElement("div");
+
+        card.className = "calendar-event";
+
+
+        const title = document.createElement("h4");
+
+        title.innerText = event.title;
+
+
+        const time = document.createElement("p");
+
+        time.innerText = "🕒 " + event.time;
+
+
+        const location = document.createElement("p");
+
+        location.innerText = "📍 " + event.location;
+
+
+        const description = document.createElement("p");
+
+        description.innerText = event.description;
+
+
+        const calendarLink = document.createElement("a");
+
+        calendarLink.href = createGoogleCalendarLink(event);
+
+        calendarLink.target = "_blank";
+
+        calendarLink.rel = "noopener";
+
+        calendarLink.innerText = "Add to Google Calendar ↗";
+
+
+        card.appendChild(title);
+
+        card.appendChild(time);
+
+        card.appendChild(location);
+
+        card.appendChild(description);
+
+        card.appendChild(calendarLink);
+
+
+        calendarEventList.appendChild(card);
+
+    });
+
+}
+
+
+// GOOGLE CALENDAR LINK
+
+function createGoogleCalendarLink(event) {
+
+    const startDate = event.date.replaceAll("-", "");
+
+    const nextDay = new Date(event.date + "T12:00:00");
+
+    nextDay.setDate(nextDay.getDate() + 1);
+
+    const endDate =
+        nextDay.getFullYear() +
+        String(nextDay.getMonth() + 1).padStart(2, "0") +
+        String(nextDay.getDate()).padStart(2, "0");
+
+
+    const details =
+        event.description +
+        " Location: " + event.location +
+        ". Please confirm event details with BlissBoard.";
+
+
+    const params = new URLSearchParams({
+
+        action: "TEMPLATE",
+
+        text: "BlissBoard - " + event.title,
+
+        dates: startDate + "/" + endDate,
+
+        details: details,
+
+        location: event.location
+
+    });
+
+
+    return "https://calendar.google.com/calendar/render?" +
+        params.toString();
+
+}
+
+
+// PREVIOUS MONTH
+
+prevMonth.addEventListener("click", function () {
+
+    calendarDate.setMonth(calendarDate.getMonth() - 1);
+
+    renderCalendar();
+
+});
+
+
+// NEXT MONTH
+
+nextMonth.addEventListener("click", function () {
+
+    calendarDate.setMonth(calendarDate.getMonth() + 1);
+
+    renderCalendar();
+
+});
+
+
+// INITIAL CALENDAR
+
+renderCalendar();
+
+
+// ========================================
+// EVENT ENQUIRY BUTTONS
+// ========================================
+
+document.querySelectorAll(".event-button").forEach(function (button) {
+
+    button.addEventListener("click", function () {
+
+        const eventName = button.dataset.event;
+
+        const eventDate = button.dataset.date;
+
+        document.getElementById("eventType").value =
+            "Creative Workshop";
+
+        document.getElementById("message").value =
+            "I am interested in " + eventName +
+            ". Please share the latest date, venue, availability and charges.";
+
+        if (eventDate) {
+            document.getElementById("eventDate").value = eventDate;
+        }
+
+        document.getElementById("plan").scrollIntoView({
+            behavior: "smooth"
+        });
+
+    });
+
+});
+
+
+// ========================================
+// ENQUIRY FORM
+// ========================================
+
+const enquiryForm = document.getElementById("enquiryForm");
+
+enquiryForm.addEventListener("submit", function (event) {
+
+    event.preventDefault();
+
+
+    const name = document.getElementById("name").value.trim();
+
+    const email = document.getElementById("email").value.trim();
+
+    const phone = document.getElementById("phone").value.trim();
+
+    const eventType = document.getElementById("eventType").value;
+
+    const eventDate = document.getElementById("eventDate").value;
+
+    const guests = document.getElementById("guests").value;
+
+    const city = document.getElementById("city").value.trim();
+
+    const message = document.getElementById("message").value.trim();
+
+
+    if (!name || !email || !phone || !eventType) {
+
+        alert("Please fill in all required fields.");
+
+        return;
+
+    }
+
+
+    const subject = "BlissBoard Event Enquiry - " + eventType;
+
+
+    const body =
+        "Hello BlissBoard Team,\n\n" +
+        "I would like to enquire about an event.\n\n" +
+        "Name: " + name + "\n" +
+        "Email: " + email + "\n" +
+        "Phone: " + phone + "\n" +
+        "Event Type: " + eventType + "\n" +
+        "Preferred Date: " + (eventDate || "Not specified") + "\n" +
+        "Expected Guests: " + (guests || "Not specified") + "\n" +
+        "City: " + (city || "Not specified") + "\n\n" +
+        "Message:\n" + (message || "No additional message") +
+        "\n\nThank you.";
+
+
+    const mailLink =
+        "mailto:officialblissboard@gmail.com" +
+        "?subject=" + encodeURIComponent(subject) +
+        "&body=" + encodeURIComponent(body);
+
+
+    window.location.href = mailLink;
+
+});
+
+
+// ========================================
+// DARK AND LIGHT MODE
+// ========================================
+
+const themeToggle = document.getElementById("themeToggle");
+
+
+function updateThemeButton() {
+
+    themeToggle.innerText =
+        document.body.classList.contains("dark-mode") ? "☀️" : "🌙";
+
+}
+
+
+try {
+
+    if (localStorage.getItem("blissboardTheme") === "dark") {
+        document.body.classList.add("dark-mode");
+    }
+
+} catch (error) {
+    console.log("Theme preference could not be loaded.");
+}
+
+
+updateThemeButton();
+
+
+themeToggle.addEventListener("click", function () {
+
+    document.body.classList.toggle("dark-mode");
+
+    const theme =
+        document.body.classList.contains("dark-mode")
+            ? "dark"
+            : "light";
+
+    try {
+        localStorage.setItem("blissboardTheme", theme);
+    } catch (error) {
+        console.log("Theme preference could not be saved.");
+    }
+
+    updateThemeButton();
+
+});
+
+
+// ========================================
+// SCROLL PROGRESS AND BACK TO TOP
+// ========================================
+
+const progressBar = document.getElementById("scrollProgress");
+
+const backTop = document.getElementById("backTop");
+
+
+window.addEventListener("scroll", function () {
+
+    const scrollTop = window.scrollY;
+
+    const scrollHeight =
+        document.documentElement.scrollHeight - window.innerHeight;
+
+    const progress =
+        scrollHeight > 0
+            ? (scrollTop / scrollHeight) * 100
+            : 0;
+
+    progressBar.style.width = progress + "%";
+
+
+    if (scrollTop > 400) {
+        backTop.classList.add("visible");
+    } else {
+        backTop.classList.remove("visible");
+    }
+
+});
+
+
+backTop.addEventListener("click", function () {
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+
+});
+
+
+// ========================================
+// FOOTER YEAR
+// ========================================
+
+document.getElementById("year").innerText =
+    new Date().getFullYear();
+
+
+// ========================================
+// BLISSBOARD WEBSITE READY
+// ========================================
