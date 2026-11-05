@@ -1,22 +1,60 @@
-BlissBoard Website
-A responsive, single-page website concept for BlissBoard, inspired by the clean experience-discovery layout of Cooldown India while keeping BlissBoard's own creative identity.
-Files
-- index.html — website content and structure
-- style.css — colours, layout, responsive design and animations
-- script.js — mobile navigation, category filters and enquiry modal
-Run locally
-Open index.html in a browser. No build tools or installation are required.
-Publish with GitHub Pages
-1. Create a public repository named blissboard-website.
-2. Upload index.html, style.css, script.js and README.md to the repository root.
-3. Open Settings → Pages.
-4. Under Build and deployment, choose Deploy from a branch.
-5. Select branch main and folder /(root), then Save.
-6. Wait for GitHub Pages to publish the site. The URL will be shown in the Pages section.
-Before making it official
-- Confirm all copy, service descriptions and experience examples with the BlissBoard team.
-- Add approved event dates, venues, prices and real event photographs.
-- Confirm official contact details and replace/add the correct contact links.
-- Connect a backend or booking provider if enquiries or payments must be received online.
-Important
-The experience cards are illustrative examples based on publicly described BlissBoard activities. They do not represent confirmed live dates, prices or availability. The enquiry action currently directs visitors to the official Instagram profile; this is a front-end website and does not process bookings or payments.
+# BlissBoard Website
+
+Welcome to the official BlissBoard website project.
+
+BlissBoard is a creative experience platform designed to bring people together through art, creativity, workshops and social experiences.
+
+## Website Features
+
+- Modern and attractive homepage
+- Responsive design
+- About BlissBoard section
+- Creative experience cards
+- Category-based filtering
+- Interactive enquiry popup
+- Instagram integration
+- Mobile navigation
+- Contact section
+- Smooth scrolling
+
+## Technologies Used
+
+- HTML5
+- CSS3
+- JavaScript
+- Google Fonts
+
+## Project Structure
+
+blissboard-website/
+│
+├── index.html
+├── style.css
+├── script.js
+└── README.md
+
+## How to Run
+
+1. Clone or download this repository.
+2. Open index.html in your browser.
+3. Explore the website.
+
+## Deployment
+
+This website can be hosted using GitHub Pages.
+
+1. Open repository Settings.
+2. Select Pages.
+3. Choose Deploy from a branch.
+4. Select main branch.
+5. Select root folder.
+6. Click Save.
+
+## Social Media
+
+Instagram:
+https://www.instagram.com/blissboard_official/
+
+## Copyright
+
+© BlissBoard. All Rights Reserved.
